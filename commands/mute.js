@@ -16,12 +16,12 @@ module.exports.run = async (blaki, message, args) => {
   if(!reason) return message.reply("❌ **Proszę wprowadzić powód** ❌");
   let gRole = message.guild.roles.find(role => role.name === "VERIFIED 🔶️");
 
-  let muterole = message.guild.roles.find(`name`, "muted");
+  let muterole = message.guild.roles.find(`name`, "MUTED 🔇");
   //start of create role
   if(!muterole){
     try{
       muterole = await message.guild.createRole({
-        name: "MUTED",
+        name: "MUTED 🔇",
         color: "#000001",
         permissions:[]
       })
