@@ -6,7 +6,6 @@ module.exports.run = async (blaki, message, args) => {
 
     let pass = (args[0]);
     let mode = args.join(" ").slice(7);
-    const ping = "<@&535100081444225035>"
     const zasady0 = "***» NIE WALCZ DOPÓKI NIE ZAMKNIE SIĘ 2 STREFA!***"
     const zasady1 = "***» NIE UŻYWAJ TRYBU ANONIMOWEGO PODCZAS GRY!***"
     const zasady2 = "***» NIE LATAJ NA SUNNY STEPS KIEDY GRA BLAKI***"
@@ -21,15 +20,15 @@ module.exports.run = async (blaki, message, args) => {
     })
     message.delete();
     let customEmbed = new Discord.RichEmbed()
-    .setColor("#b7dd80")
+    .setColor("#f7ff07")
+    .setDescription(`HOST: ${message.author}`)
     .setThumbnail('https://i.imgur.com/rmxBcdK.png')
     .setTitle("__**POWIADOMIENIE O NOWEJ GRZE**__")
-    .addField("**Hasło:**", `**${pass}**`)
-    .addField("**Tryb Gry:**", `**${mode}**`)
-    .addField("**Zasady:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4)
+    .addField("**HASŁO:**", `**${pass}**`)
+    .addField("**TRYB:**", `**${mode}**`)
+    .addField("**ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4)
     .setTimestamp(message.createdAt)
     .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/7xm6SSI.png");
-    message.channel.send(ping)
     message.channel.send(customEmbed).then(function (message) {
         message.react(check)
     })
