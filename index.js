@@ -28,7 +28,7 @@ blaki.on('ready', async () =>
     var OnlineCount = guild.members.filter(member => member.presence.status == 'online' || member.presence.status == 'idle' || member.presence.status == 'dnd').size
     DateChannel.setName("📅 " + date.format(now, 'DD.MM.YYYY'));
     OnlineChannel.setName("🔋 Aktywni: " + OnlineCount);
-    HumansChannel.setName("👨🏽‍✈️ Jest Nas: " + HumansCount);
+    HumansChannel.setName("👑 Jest Nas: " + HumansCount);
   }, 20000)
 });
 
