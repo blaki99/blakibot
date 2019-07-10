@@ -10,10 +10,9 @@ module.exports.run = async (blaki, message, args) => {
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send("❌ **Nie znaleziono użytkownika** ❌");
     let bReason = args.join(" ").slice(22);
-    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ **Nie można wyrzucić tego użytkownika** ❌");
+    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ **Nie można zbanować tego użytkownika** ❌");
 
     let banEmbed = new Discord.RichEmbed()
-    .setDescription("BANICJA")
     .setColor("#ff3300")
     .addField("Zbanowany Użytkownik", `${bUser} with ID ${bUser.id}`)
     .addField("Zbanowany Przez", `<@${message.author.id}> with ID ${message.author.id}`)
