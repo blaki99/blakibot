@@ -51,9 +51,10 @@ module.exports.run = async (blaki, message, args) => {
   .setColor("#ff3300")
   .addField("Wyciszony Użytkownik", mute)
   .addField("Wyciszono na", message.channel)
-  .addField("Czas", message.createdAt)
   .addField("Długość", mutetime)
-  .addField("Powód", reason);
+  .addField("Powód", reason)
+  .setTimestamp(message.createdAt)
+  .setFooter('Nowe Zgłoszenie', 'https://i.imgur.com/7xm6SSI.png');
 
   let incidentschannel = message.guild.channels.find(`name`, "📕  »  ᴅᴢɪᴇɴɴɪᴋ  ᴢᴅᴀʀᴢᴇɴ");
   if(!incidentschannel) return message.reply("❌ **Proszę utworzyć kanał zdarzeń** ❌");
