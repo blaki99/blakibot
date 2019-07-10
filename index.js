@@ -44,7 +44,7 @@ fs.readdir("./commands/", (err, files) => {
 
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/${f}`);
-    console.log(`${f} loaded!`);
+    console.log(`Poprawnie załadowano ${f}!`);
     blaki.commands.set(props.help.name, props);
   });
 
