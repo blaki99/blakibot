@@ -47,14 +47,14 @@ module.exports.run = async (blaki, message, args) => {
   }
 
   let muteembed = new Discord.RichEmbed()
-  .setDescription(`Mute executed by ${message.author}`)
+  .setDescription(`Wyciszenie nadane przez ${message.author}`)
   .setColor("#ff3300")
   .addField("Wyciszony Użytkownik", mute)
   .addField("Wyciszono na", message.channel)
   .addField("Długość", mutetime)
   .addField("Powód", reason)
   .setTimestamp(message.createdAt)
-  .setFooter('Nowe Zgłoszenie', 'https://i.imgur.com/7xm6SSI.png');
+  .setFooter('Wyciszono Użytkownika', 'https://i.imgur.com/7xm6SSI.png');
 
   let incidentschannel = message.guild.channels.find(`name`, "📕  »  ᴅᴢɪᴇɴɴɪᴋ  ᴢᴅᴀʀᴢᴇɴ");
   if(!incidentschannel) return message.reply("❌ **Proszę utworzyć kanał zdarzeń** ❌");
