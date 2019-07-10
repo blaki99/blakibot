@@ -3,10 +3,6 @@ const Discord = require("discord.js");
 module.exports.run = async (blaki, message, args) => {
 
   if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("❌ **Nie można wykonać akcji** ❌");
-  if(args[0] == "help"){
-    message.reply("Użycie: !unmute <user>");
-    return;
-  }
   let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if(!rMember) return message.reply("❌ **Nie znaleziono użytkownika** ❌");
   let role = message.guild.roles.find(role => role.name === "muted");
