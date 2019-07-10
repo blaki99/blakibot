@@ -14,6 +14,7 @@ module.exports.run = async (blaki, message, args) => {
   if(mute.hasPermission("MANAGE_MESSAGES")) return message.reply("❌ **Nie można wyciszyć** ❌");
   let reason = args.slice(2).join(" ");
   if(!reason) return message.reply("❌ **Proszę wprowadzić powód** ❌");
+  let gRole = message.guild.roles.find(role => role.name === "VERIFIED 🔶️");
 
   let muterole = message.guild.roles.find(`name`, "muted");
   //start of create role
@@ -61,6 +62,7 @@ module.exports.run = async (blaki, message, args) => {
   incidentschannel.send(muteembed);
 
   await(mute.addRole(muterole.id));
+  await(mute.removeRole(gRole.id));
 
   setTimeout(function(){
     mute.removeRole(muterole.id);
