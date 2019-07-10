@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const ms = require("ms");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (blaki, message, args) => {
 
 
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("❌ **Nie można wykonać akcji** ❌");
