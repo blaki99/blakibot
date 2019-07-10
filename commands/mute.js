@@ -1,9 +1,6 @@
 const Discord = require("discord.js");
 const ms = require("ms");
 const botconfig = require("../botconfig.json");
-const red = botconfig.red;
-const green = botconfig.green;
-const orange = botconfig.orange;
 
 module.exports.run = async (bot, message, args) => {
 
@@ -52,7 +49,7 @@ module.exports.run = async (bot, message, args) => {
 
   let muteembed = new Discord.RichEmbed()
   .setDescription(`Mute executed by ${message.author}`)
-  .setColor(orange)
+  .setColor("#ff3300")
   .addField("Wyciszony Użytkownik", mute)
   .addField("Wyciszono na", message.channel)
   .addField("Czas", message.createdAt)
