@@ -6,11 +6,11 @@ module.exports.run = async (blaki, message, args) => {
 
     let pass = (args[0]);
     let mode = args.join(" ").slice(7);
-    const zasady0 = "***» NIE WALCZ DOPÓKI NIE ZAMKNIE SIĘ 2 STREFA!***"
-    const zasady1 = "***» NIE UŻYWAJ TRYBU ANONIMOWEGO PODCZAS GRY!***"
-    const zasady2 = "***» NIE LATAJ NA SUNNY STEPS KIEDY GRA BLAKI***"
-    const zasady3 = "***» NIE BIEGAJ ZA OSOBĄ, KTÓRA HOSTUJE!***"
-    const zasady4 = "***» NIE BIJEMY SIĘ NA PIERWSZYCH MIEJSCÓWKACH !***"
+    const zasady0 = "**» NIE** WALCZ DOPÓKI NIE ZAMKNIE SIĘ 2 STREFA!"
+    const zasady1 = "**» NIE** UŻYWAJ TRYBU ANONIMOWEGO PODCZAS GRY!"
+    const zasady2 = "**» NIE** LATAJ NA SUNNY STEPS KIEDY GRA BLAKI"
+    const zasady3 = "**» NIE** BIEGAJ ZA OSOBĄ, KTÓRA HOSTUJE!"
+    const zasady4 = "**» NIE** BIJEMY SIĘ NA PIERWSZYCH MIEJSCÓWKACH !"
     const check = '577121399043522560'
 
     if(!message.member.roles.has(Szefuncio.id)) return message.reply("oops");
