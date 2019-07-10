@@ -7,10 +7,10 @@ module.exports.run = async (blaki, message, args) => {
     let pass = (args[0]);
     let mode = args.join(" ").slice(7);
     const ping = "<@&535100081444225035>"
-    const zasady0 = "***» WALCZYMY OD ZAMKNIĘCIA 2 STREFY JAK JEST 70+ OSÓB LUB JAK SIĘ POJAWI STORM SURGE!***"
-    const zasady1 = "***» WALCZYMY OD ZAMKNIĘCIA SIĘ 3 STREFY JAK JEST 55-70 OSÓB !***"
-    const zasady2 = "***» MNIEJ NIŻ 55 OSÓB WALCZYMY OD ZAMKNIĘCIA SIĘ 4 STREFY !***"
-    const zasady3 = "***» NIE LATAJ NA WULKAN I NIE BIEGAJ ZA BLAKIM BO ZGINIESZ !***"
+    const zasady0 = "***» NIE WALCZ DOPÓKI NIE ZAMKNIE SIĘ 2 STREFA!***"
+    const zasady1 = "***» NIE UŻYWAJ TRYBU ANONIMOWEGO PODCZAS GRY!***"
+    const zasady2 = "***» NIE LATAJ NA SUNNY STEPS KIEDY GRA BLAKI***"
+    const zasady3 = "***» NIE BIEGAJ ZA OSOBĄ, KTÓRA HOSTUJE!***"
     const zasady4 = "***» NIE BIJEMY SIĘ NA PIERWSZYCH MIEJSCÓWKACH !***"
     const check = '577121399043522560'
 
@@ -22,6 +22,7 @@ module.exports.run = async (blaki, message, args) => {
     message.delete();
     let customEmbed = new Discord.RichEmbed()
     .setColor("#b7dd80")
+    .setThumbnail('https://i.imgur.com/rmxBcdK.png')
     .setTitle("__**POWIADOMIENIE O NOWEJ GRZE**__")
     .addField("**Hasło:**", `**${pass}**`)
     .addField("**Tryb Gry:**", `**${mode}**`)
