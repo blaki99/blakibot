@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (blaki, message, args) => {
 
-    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("No can do pal!");
+    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("❌ **Nie można wykonać akcji** ❌");
     if(args[0] == "help"){
       message.reply("Użycie: !ban <user> <reason>");
       return;
