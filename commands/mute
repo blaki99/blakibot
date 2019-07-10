@@ -6,8 +6,8 @@ module.exports.run = async (bot, message, args) => {
   //!tempmute @user 1s/m/h/d
 
   let mute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(!mute) return message.reply("Nie znaleziono użytkownika.");
-  if(mute.hasPermission("MANAGE_MESSAGES")) return message.reply("Nie można wyciszyć!");
+  if(!mute) return message.reply("❌ **Nie znaleziono użytkownika** ❌");
+  if(mute.hasPermission("MANAGE_MESSAGES")) return message.reply("❌ **Nie można wyciszyć** ❌");
   let muterole = message.guild.roles.find(`name`, "muted");
   //start of create role
   if(!muterole){
@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
   }
   //end of create role
   let mutetime = args[1];
-  if(!mutetime) return message.reply("Nie podałeś czasu!");
+  if(!mutetime) return message.reply("❌ **Nie podanu czasu wyciszenia** ❌");
 
   await(mute.addRole(muterole.id));
   message.reply(`<@${mute.id}> został wyciszony na ${ms(ms(mutetime))}`);
