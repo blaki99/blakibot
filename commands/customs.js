@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (blaki, message, args) => {
 
-    let Szefuncio = message.guild.roles.find("name", "SZEFUNCIO 🎓");
+    let Szefuncio = message.guild.roles.find("name", "SZEFUNCIO 👑");
 
     let pass = (args[0]);
     let mode = args.join(" ").slice(7);
