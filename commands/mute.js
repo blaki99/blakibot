@@ -20,8 +20,8 @@ module.exports.run = async (blaki, message, args) => {
   if(!muterole){
     try{
       muterole = await message.guild.createRole({
-        name: "muted",
-        color: "#000000",
+        name: "MUTED",
+        color: "#000001",
         permissions:[]
       })
       message.guild.channels.forEach(async (channel, id) => {
