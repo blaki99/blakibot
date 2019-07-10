@@ -66,6 +66,7 @@ module.exports.run = async (blaki, message, args) => {
 
   setTimeout(function(){
     mute.removeRole(muterole.id);
+    mute.addRole(gRole.id);
     message.channel.send(`<@${mute.id}> ponownie ma prawo głosu!`);
   }, ms(mutetime));
 
