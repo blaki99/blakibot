@@ -32,6 +32,8 @@ module.exports.run = async (blaki, message, args) => {
   if(!incidentschannel) return message.reply("❌ **Proszę utworzyć kanał zdarzeń** ❌");
   incidentschannel.send(unmuteembed);
   
+  message.channel.send(`<@${rMember.id}> ponownie ma prawo głosu!`);
+  
 }
 
 module.exports.help = {
