@@ -41,9 +41,9 @@ module.exports.run = async (blaki, message, args) => {
   message.delete().catch(O_o=>{});
 
   try{
-    await mute.send(`Hej, zostałeś wyciszony na ${mutetime}`)
+    await mute.send(`Hej, zostałeś wyciszony na **${mutetime}**`)
   }catch(e){
-    message.channel.send(`Użytkownik został wyciszony na ${mutetime} ale niestemy ma zablokowane wiadomości prywatne.`)
+    message.channel.send(`Użytkownik został wyciszony na **${mutetime}** ale niestemy ma zablokowane wiadomości prywatne.`)
   }
 
   let muteembed = new Discord.RichEmbed()
