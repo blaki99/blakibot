@@ -12,6 +12,14 @@ module.exports.run = async (blaki, message, args) => {
     let kReason = args.join(" ").slice(22);
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ **Nie można wyrzucić tego użytkownika** ❌");
 
+    message.delete().catch(O_o=>{});
+    
+    try{
+    await kUser.send(`Hej, zostałeś wyrzucony z serwera **BlaKi's Discord** z powodu: ${kReason}`)
+  }catch(e){
+    message.channel.send(`Użytkownik został zbanowany na **BlaKi's Discord** ale niestemy ma zablokowane wiadomości prywatne.`)
+  }
+    
     let kickEmbed = new Discord.RichEmbed()
     .setColor("#ff3300")
     .addField("Wyrzucony Użytkownik", `${kUser} with ID ${kUser.id}`)
