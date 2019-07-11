@@ -15,10 +15,18 @@ module.exports.run = async (blaki, message, args) => {
     message.delete().catch(O_o=>{});
     
     try{
-    await kUser.send(`Hej, zostałeś wyrzucony z serwera **BlaKi's Discord** z powodu: **${kReason}**`)
-  }catch(e){
-    message.channel.send(`Użytkownik został zbanowany na **BlaKi's Discord** ale niestemy ma zablokowane wiadomości prywatne.`)
-  }
+        let DMkickEmbed = new Discord.RichEmbed()
+        .setColor("#ff3300")
+        .setTitle("__**ZOSTAŁEŚ WYRZUCONY**__")
+        .addField("SERWER", `**BlaKi's Discord**`)
+        .addField("Wyrzucony Przez", `<@${message.author.id}> with ID ${message.author.id}`)
+        .addField("Powód", kReason)
+        .setTimestamp(message.createdAt)
+        .setFooter('Zostałeś wyrzucony!', 'https://i.imgur.com/7xm6SSI.png');
+        await kUser.send(DMkickEmbed)
+    }catch(e){
+        message.channel.send(`Użytkownik został zbanowany na **BlaKi's Discord** ale niestemy ma zablokowane wiadomości prywatne.`)
+    }
     
     let kickEmbed = new Discord.RichEmbed()
     .setColor("#ff3300")
