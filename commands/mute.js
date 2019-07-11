@@ -46,7 +46,7 @@ module.exports.run = async (blaki, message, args) => {
         .setColor("#ff3300")
         .setTitle("__**ZOSTAŁEŚ WYCISZONY**__")
         .addField("Serwer", `**BlaKi's Discord**`)
-        .addField("Zmutowany Przez", `<@${message.author.id}> with ID ${message.author.id}`)
+        .addField("Zmutowany Przez", `<@${message.author.id}>`)
         .addField("Powód", reason)
         .addField("Czas Wyciszenia", mutetime)
         .setTimestamp(message.createdAt)
