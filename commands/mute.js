@@ -41,18 +41,27 @@ module.exports.run = async (blaki, message, args) => {
 
   message.delete().catch(O_o=>{});
 
-  try{
-    await mute.send(`Hej, zostałeś wyciszony na **${mutetime}** z powodu: **${reason}`)
-  }catch(e){
-    message.channel.send(`Użytkownik został wyciszony na **${mutetime}** ale niestemy ma zablokowane wiadomości prywatne.`)
-  }
+   try{
+        let DMMuteEmbed = new Discord.RichEmbed()
+        .setColor("#ff3300")
+        .setTitle("__**ZOSTAŁEŚ WYCISZONY**__")
+        .addField("Serwer", `**BlaKi's Discord**`)
+        .addField("Zmutowany Przez", `<@${message.author.id}> with ID ${message.author.id}`)
+        .addField("Powód", reason)
+        .addField("Czas Wyciszenia", mutetime)
+        .setTimestamp(message.createdAt)
+        .setFooter('Zostałeś wyciszony!', 'https://i.imgur.com/7xm6SSI.png');
+        await mute.send(DMMuteEmbed)
+    }catch(e){
+        message.channel.send(`Użytkownik został wyciszony na **${mutetime}** ale niestemy ma zablokowane wiadomości prywatne.`)
+    }
 
   let muteembed = new Discord.RichEmbed()
   .setDescription(`Wyciszenie nadane przez ${message.author}`)
   .setColor("#ff3300")
   .addField("Wyciszony Użytkownik", mute)
   .addField("Wyciszono na", message.channel)
-  .addField("Długość", mutetime)
+  .addField("Czas Wyciszenia", mutetime)
   .addField("Powód", reason)
   .setTimestamp(message.createdAt)
   .setFooter('Wyciszono Użytkownika', 'https://i.imgur.com/7xm6SSI.png');
