@@ -15,7 +15,7 @@ module.exports.run = async (blaki, message, args) => {
     message.delete().catch(O_o=>{});
     
     try{
-    await bUser.send(`Hej, zostałeś zbanowany na **BlaKi's Discord** z powodu: ${bReason}`)
+    await bUser.send(`Hej, zostałeś zbanowany na serwerze **BlaKi's Discord** z powodu: **${bReason}**`)
   }catch(e){
     message.channel.send(`Użytkownik został zbanowany na **BlaKi's Discord** ale niestemy ma zablokowane wiadomości prywatne.`)
   }
