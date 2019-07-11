@@ -5,7 +5,7 @@ module.exports.run = async (blaki, message, args) => {
     let Szefuncio = message.guild.roles.find("name", "HOST 🔌");
 
     let pass = (args[0]);
-    let mode = args.join(" ").slice(7);
+    const mode = restArgs.join(' ');
     const zasady0 = "**» NIE** WALCZ DOPÓKI NIE ZAMKNIE SIĘ 2 STREFA!"
     const zasady1 = "**» NIE** UŻYWAJ TRYBU ANONIMOWEGO PODCZAS GRY!"
     const zasady2 = "**» NIE** LATAJ NA SUNNY STEPS KIEDY GRA BLAKI"
