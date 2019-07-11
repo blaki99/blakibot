@@ -19,7 +19,7 @@ module.exports.run = async (blaki, message, args) => {
         .setColor("#ff3300")
         .setTitle("__**ZOSTAŁEŚ ZBANOWANY**__")
         .addField("Serwer", `**BlaKi's Discord**`)
-        .addField("Zbanowany Przez", `<@${message.author.id}> with ID ${message.author.id}`)
+        .addField("Zbanowany Przez", `<@${message.author.id}>`)
         .addField("Powód", bReason)
         .setTimestamp(message.createdAt)
         .setFooter('Zostałeś zbanowany!', 'https://i.imgur.com/7xm6SSI.png');
@@ -30,8 +30,8 @@ module.exports.run = async (blaki, message, args) => {
 
     let banEmbed = new Discord.RichEmbed()
     .setColor("#ff3300")
-    .addField("Zbanowany Użytkownik", `${bUser} with ID ${bUser.id}`)
-    .addField("Zbanowany Przez", `<@${message.author.id}> with ID ${message.author.id}`)
+    .addField("Zbanowany Użytkownik", `${bUser}`)
+    .addField("Zbanowany Przez", `<@${message.author.id}>`)
     .addField("Zbanowany Na", message.channel)
     .addField("Powód", bReason)
     .setTimestamp(message.createdAt)
