@@ -18,7 +18,7 @@ module.exports.run = async (blaki, message, args) => {
         let DMbanEmbed = new Discord.RichEmbed()
         .setColor("#ff3300")
         .setTitle("__**ZOSTAŁEŚ ZBANOWANY**__")
-        .addField("SERWER", `**BlaKi's Discord**`)
+        .addField("Serwer", `**BlaKi's Discord**`)
         .addField("Zbanowany Przez", `<@${message.author.id}> with ID ${message.author.id}`)
         .addField("Powód", bReason)
         .setTimestamp(message.createdAt)
