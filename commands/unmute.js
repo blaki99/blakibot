@@ -15,9 +15,16 @@ module.exports.run = async (blaki, message, args) => {
   message.delete().catch(O_o=>{});
   
   try{
-    await rMember.send(`Twoje wyciszenie na serwerze **BlaKi's Discord** zostało zjdęte!`)
-  }catch(e){
-    message.channel.send(`<@${rMember.id}> ma zablokowane wiadomośći prywatne ale wyciszenie zostało zdjęte!`)
+        let DMUnMuteEmbed = new Discord.RichEmbed()
+        .setColor("#ff3300")
+        .setTitle("__**ZDJĘTO WYCISZENIE**__")
+        .addField("Serwer", `**BlaKi's Discord**`)
+        .addField("Wyciszenie zdjął", `<@${message.author.id}> with ID ${message.author.id}`)
+        .setTimestamp(message.createdAt)
+        .setFooter('Zdjęto wyciszenie!', 'https://i.imgur.com/7xm6SSI.png');
+        await rMember.send(DMUnMuteEmbed)
+    }catch(e){
+        message.channel.send(`<@${rMember.id}> ma zablokowane wiadomośći prywatne ale wyciszenie zostało zdjęte!`)
   }
   
   let unmuteembed = new Discord.RichEmbed()
