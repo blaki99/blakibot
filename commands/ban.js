@@ -11,6 +11,12 @@ module.exports.run = async (blaki, message, args) => {
     if(!bUser) return message.channel.send("❌ **Nie znaleziono użytkownika** ❌");
     let bReason = args.join(" ").slice(22);
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ **Nie można zbanować tego użytkownika** ❌");
+    
+    try{
+    await mute.send(`Hej, zostałeś zbanowany na **BlaKi's Discord**, powód: ${bReason}`)
+  }catch(e){
+    message.channel.send(`Użytkownik został zbanowany na **BlaKi's Discord** ale niestemy ma zablokowane wiadomości prywatne.`)
+  }
 
     let banEmbed = new Discord.RichEmbed()
     .setColor("#ff3300")
