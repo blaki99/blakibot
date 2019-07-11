@@ -19,7 +19,7 @@ module.exports.run = async (blaki, message, args) => {
         .setColor("#ff3300")
         .setTitle("__**ZOSTAŁEŚ WYRZUCONY**__")
         .addField("Serwer", `**BlaKi's Discord**`)
-        .addField("Wyrzucony Przez", `<@${message.author.id}> with ID ${message.author.id}`)
+        .addField("Wyrzucony Przez", `<@${message.author.id}>`)
         .addField("Powód", kReason)
         .setTimestamp(message.createdAt)
         .setFooter('Zostałeś wyrzucony!', 'https://i.imgur.com/7xm6SSI.png');
@@ -30,8 +30,8 @@ module.exports.run = async (blaki, message, args) => {
     
     let kickEmbed = new Discord.RichEmbed()
     .setColor("#ff3300")
-    .addField("Wyrzucony Użytkownik", `${kUser} with ID ${kUser.id}`)
-    .addField("Wyrzucony przez", `<@${message.author.id}> with ID ${message.author.id}`)
+    .addField("Wyrzucony Użytkownik", `${kUser}`)
+    .addField("Wyrzucony przez", `<@${message.author.id}>`)
     .addField("Wyrzucony na", message.channel)
     .addField("Powód", kReason)
     .setTimestamp(message.createdAt)
