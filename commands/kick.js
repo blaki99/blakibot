@@ -18,7 +18,7 @@ module.exports.run = async (blaki, message, args) => {
         let DMkickEmbed = new Discord.RichEmbed()
         .setColor("#ff3300")
         .setTitle("__**ZOSTAŁEŚ WYRZUCONY**__")
-        .addField("SERWER", `**BlaKi's Discord**`)
+        .addField("Serwer", `**BlaKi's Discord**`)
         .addField("Wyrzucony Przez", `<@${message.author.id}> with ID ${message.author.id}`)
         .addField("Powód", kReason)
         .setTimestamp(message.createdAt)
