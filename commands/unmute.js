@@ -19,7 +19,7 @@ module.exports.run = async (blaki, message, args) => {
         .setColor("#ff3300")
         .setTitle("__**ZDJĘTO WYCISZENIE**__")
         .addField("Serwer", `**BlaKi's Discord**`)
-        .addField("Wyciszenie zdjął", `<@${message.author.id}> with ID ${message.author.id}`)
+        .addField("Wyciszenie zdjął", `<@${message.author.id}>`)
         .setTimestamp(message.createdAt)
         .setFooter('Zdjęto wyciszenie!', 'https://i.imgur.com/7xm6SSI.png');
         await rMember.send(DMUnMuteEmbed)
