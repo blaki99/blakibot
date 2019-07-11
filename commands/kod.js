@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (blaki, message, args) => {
+    
+    message.delete().catch(O_o=>{});
     let serverembed = new Discord.RichEmbed()
     .setDescription(`**KOD W SKLEPIE!**`)
     .setColor("#15f153")
