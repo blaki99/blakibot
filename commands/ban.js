@@ -13,7 +13,7 @@ module.exports.run = async (blaki, message, args) => {
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ **Nie można zbanować tego użytkownika** ❌");
     
     try{
-    await message.member.send(`Hej, zostałeś zbanowany na **BlaKi's Discord** z powodu: ${bReason}`)
+    await bUser.send(`Hej, zostałeś zbanowany na **BlaKi's Discord** z powodu: ${bReason}`)
   }catch(e){
     message.channel.send(`Użytkownik został zbanowany na **BlaKi's Discord** ale niestemy ma zablokowane wiadomości prywatne.`)
   }
