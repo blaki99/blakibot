@@ -15,17 +15,25 @@ module.exports.run = async (blaki, message, args) => {
     message.delete().catch(O_o=>{});
     
     try{
-    await bUser.send(`Hej, zostałeś zbanowany na serwerze **BlaKi's Discord** z powodu: **${bReason}**`)
-  }catch(e){
-    message.channel.send(`Użytkownik został zbanowany na **BlaKi's Discord** ale niestemy ma zablokowane wiadomości prywatne.`)
-  }
+        let DMbanEmbed = new Discord.RichEmbed()
+        .setColor("#ff3300")
+        .setTitle("__**ZOSTAŁEŚ ZBANOWANY**__")
+        .addField("SERWER", `**BlaKi's Discord**`)
+        .addField("Zbanowany Przez", `<@${message.author.id}> with ID ${message.author.id}`)
+        .addField("Powód", bReason)
+        .setTimestamp(message.createdAt)
+        .setFooter('Zostałeś zbanowany!', 'https://i.imgur.com/7xm6SSI.png');
+        await bUser.send(DMbanEmbed)
+    }catch(e){
+        message.channel.send(`Użytkownik został zbanowany na **BlaKi's Discord** ale niestemy ma zablokowane wiadomości prywatne.`)
+    }
 
     let banEmbed = new Discord.RichEmbed()
     .setColor("#ff3300")
     .addField("Zbanowany Użytkownik", `${bUser} with ID ${bUser.id}`)
     .addField("Zbanowany Przez", `<@${message.author.id}> with ID ${message.author.id}`)
     .addField("Zbanowany Na", message.channel)
-    .addField("Reason", bReason)
+    .addField("Powód", bReason)
     .setTimestamp(message.createdAt)
     .setFooter('Zbanowano Użytkownika', 'https://i.imgur.com/7xm6SSI.png');
 
