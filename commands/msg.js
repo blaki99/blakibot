@@ -18,7 +18,7 @@ module.exports.run = async (blaki, message, args) => {
     .setColor("#000000")
     .setDescription(`**POWIADOMIENIE OD:** ${message.author}`)
     .setTitle("__**INFORMACJA**__")
-    .addField("``${msg} + ${msg2}``")
+    .addField(`${msg} + ${msg2}`)
     .setTimestamp(message.createdAt)
     .setFooter("Kliknij reakcje jeśli przeczytałeś", "https://i.imgur.com/7xm6SSI.png");
     message.channel.send(msgEmbed).then(function (message) {
