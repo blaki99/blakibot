@@ -3,10 +3,7 @@ const Fortnite = require("fortnite-publicapi");
 const shop = require("./shop.json");
 
 module.exports.run = async (blaki, message, args) => {
-  
-  let Szefuncio = message.guild.roles.find("name", "OWNER 🎓");
-  if(!message.member.roles.has(Szefuncio.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
-  
+  message.delete().catch(O_o=>{});
   Fortnite.FortniteStore('en', async (data) => {
     data = JSON.parse(data);
     let channel = blaki.channels.find('id', shop.channelid);
