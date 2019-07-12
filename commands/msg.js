@@ -5,6 +5,8 @@ module.exports.run = async (blaki, message, args) => {
     let Szefuncio = message.guild.roles.find("name", "HOST 🔌");
 
     let msg = (args[0]);
+    let msg2 = args.slice(1).join(' ')
+    const ramka = "```"
     const check = '577121399043522560'
 
     if(!message.member.roles.has(Szefuncio.id)) return message.reply("oops");
@@ -16,7 +18,7 @@ module.exports.run = async (blaki, message, args) => {
     let msgEmbed = new Discord.RichEmbed()
     .setColor("#000000")
     .setDescription(`**POWIADOMIENIE OD:** ${message.author}`)
-    .addField("__**INFORMACJA**__", `**${msg}**`)
+    .addField("__**INFORMACJA**__", `${ramka}${msg}${msg2}${ramka}`)
     .setTimestamp(message.createdAt)
     .setFooter("Kliknij reakcje jeśli przeczytałeś", "https://i.imgur.com/7xm6SSI.png");
     message.channel.send(msgEmbed).then(function (message) {
