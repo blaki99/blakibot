@@ -17,7 +17,13 @@ module.exports.run = async (blaki, message, args) => {
 
             channel.send(shop.msg.replace(`{DATE}`, `${data['date']}`));
             list.forEach(async element => {
-              await channel.sendFile(element);
+              let sklepEmbed = new Discord.RichEmbed()
+              .setDescription(`**KOD W SKLEPIE!**`)
+              .setColor("#18a6e8")
+              .setImage(element)
+              .setTimestamp(message.createdAt)
+              .setFooter('Wspieraj Najlepszego Twórcę!', 'https://i.imgur.com/cgF1hsE.png');
+              await channel.sendFile(sklepEmbed);
             });
           }
         }
