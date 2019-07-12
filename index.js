@@ -22,7 +22,7 @@ blaki.on('ready', async () =>
   setInterval(async () => {
       Fortnite.FortniteStore('en', async (data) => {
         data = JSON.parse(data);
-        let channel = bot.channels.find('id', shop.channelid);
+        let channel = blaki.channels.find('id', shop.channelid);
         if(channel) {
           if(channel.topic !== data['date']){
             channel.setTopic(data['date']);
