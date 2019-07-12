@@ -1,4 +1,5 @@
 const blakiconfig = require("./blakiconfig.json");
+const Fortnite = require("fortnite-publicapi");
 const Discord = require('discord.js');
 const blaki = new Discord.Client({disableEveryone: true});
 require('dotenv-flow').config();
@@ -16,6 +17,27 @@ blaki.on('ready', async () =>
 {
   console.log(`${blaki.user.username} jest online!`);
   blaki.user.setActivity('KOD BLAKI W SKLEPIE', { type: 'WATCHING'});
+    
+  setInterval(async () => {
+      Fortnite.FortniteStore('en', async (data) => {
+        data = JSON.parse(data);
+        let channel = bot.channels.find('id', cfg.channelid);
+        if(channel) {
+          if(channel.topic !== data['date']){
+            channel.setTopic(data['date']);
+            var list = [];
+            data['items'].forEach(async element => {
+              await list.push(element.item.images.information);
+            });
+
+            channel.send(cfg.msg.replace(`{DATE}`, `${data['date']}`));
+            list.forEach(async element => {
+              await channel.sendFile(element);
+            });
+          }
+        }
+      });
+    }, cfg.refresh*1000);
     
   const guild = blaki.guilds.get('535089879420502017');
   setInterval(function() 
