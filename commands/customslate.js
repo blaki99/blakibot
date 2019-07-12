@@ -13,10 +13,10 @@ module.exports.run = async (blaki, message, args) => {
     const zasady4 = "**» NIE** BIJEMY SIĘ NA PIERWSZYCH MIEJSCÓWKACH !"
     const check = '599045521553883139'
 
-    if(!message.member.roles.has(Szefuncio.id)) return message.reply("oops");
+    if(!message.member.roles.has(Szefuncio.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **!late hasło tryb**_ ❌").then(() =>
     {
-        message.channel.send("❌ _**Hasło musi posiadać dokładnie 7 znaków!**_ ❌");
+        message.channel.send("❌ _**Hasło musi posiadać conajmniej 5 znaków!**_ ❌");
     })
     message.delete();
     let customEmbed = new Discord.RichEmbed()
