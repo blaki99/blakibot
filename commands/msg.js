@@ -19,7 +19,8 @@ module.exports.run = async (blaki, message, args) => {
     let msgEmbed = new Discord.RichEmbed()
     .setColor("#000000")
     .setDescription(`**POWIADOMIENIE OD:** ${message.author}`)
-    .addField("__**INFORMACJA**__", `${ramka}${msg} ${msg2}${ramka2}`)
+    .addField("__**INFORMACJA**__", `${ramka}
+    ${msg} ${msg2}${ramka2}`)
     .setTimestamp(message.createdAt)
     .setFooter("Kliknij reakcje jeśli przeczytałeś", "https://i.imgur.com/7xm6SSI.png");
     message.channel.send(msgEmbed).then(function (message) {
