@@ -17,5 +17,6 @@
     "fortnite": "^4.3.2",
     "fs": "0.0.1-security",
     "ms": "^2.1.2"
+    "fortnite-publicapi": "^1.0.0"
   }
 }
