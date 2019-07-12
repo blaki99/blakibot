@@ -10,7 +10,7 @@ module.exports.run = async (blaki, message, args) => {
     const ramka2 = "```"
     const check = '599045521553883139'
 
-    if(!message.member.roles.has(Szefuncio.id)) return message.reply("oops");
+    if(!message.member.roles.has(Szefuncio.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **!msg <wiadomość>**_ ❌")
     message.delete();
     let msgEmbed = new Discord.RichEmbed()
