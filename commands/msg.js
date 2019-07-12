@@ -17,7 +17,7 @@ module.exports.run = async (blaki, message, args) => {
     })
     message.delete();
     let msgEmbed = new Discord.RichEmbed()
-    .setColor("#000000")
+    .setColor("#18a6e8")
     .setDescription(`**POWIADOMIENIE OD:** ${message.author}`)
     .addField("__**INFORMACJA**__", `${ramka}
 ${msg} ${msg2}${ramka2}`)
