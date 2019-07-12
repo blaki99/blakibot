@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const Fortnite = require("fortnite-publicapi");
-const shop = require("../shop.json");
+const shop = require("./shop.json");
 
 module.exports.run = async (blaki, message, args) => {
   
