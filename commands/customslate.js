@@ -11,7 +11,7 @@ module.exports.run = async (blaki, message, args) => {
     const zasady2 = "**» NIE** LATAJ NA SUNNY STEPS KIEDY GRA BLAKI"
     const zasady3 = "**» NIE** BIEGAJ ZA OSOBĄ, KTÓRA HOSTUJE!"
     const zasady4 = "**» NIE** BIJEMY SIĘ NA PIERWSZYCH MIEJSCÓWKACH !"
-    const check = '577121399043522560'
+    const check = '599045521553883139'
 
     if(!message.member.roles.has(Szefuncio.id)) return message.reply("oops");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **!late hasło tryb**_ ❌").then(() =>
