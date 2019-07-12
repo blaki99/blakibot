@@ -50,7 +50,7 @@ module.exports.run = async (blaki, message, args) => {
         .addField("Powód", reason)
         .addField("Czas Wyciszenia", mutetime)
         .setTimestamp(message.createdAt)
-        .setFooter('Zostałeś wyciszony!', 'https://i.imgur.com/7xm6SSI.png');
+        .setFooter('Zostałeś wyciszony!', 'https://i.imgur.com/cgF1hsE.png');
         await mute.send(DMMuteEmbed)
     }catch(e){
         message.channel.send(`Użytkownik został wyciszony na **${mutetime}** ale niestemy ma zablokowane wiadomości prywatne.`)
@@ -64,7 +64,7 @@ module.exports.run = async (blaki, message, args) => {
   .addField("Czas Wyciszenia", mutetime)
   .addField("Powód", reason)
   .setTimestamp(message.createdAt)
-  .setFooter('Wyciszono Użytkownika', 'https://i.imgur.com/7xm6SSI.png');
+  .setFooter('Wyciszono Użytkownika', 'https://i.imgur.com/cgF1hsE.png');
 
   let incidentschannel = message.guild.channels.find(`name`, "📕  »  ᴅᴢɪᴇɴɴɪᴋ  ᴢᴅᴀʀᴢᴇɴ");
   if(!incidentschannel) return message.reply("❌ **Proszę utworzyć kanał zdarzeń** ❌");
