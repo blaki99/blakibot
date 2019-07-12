@@ -2,6 +2,7 @@ const blakiconfig = require("./blakiconfig.json");
 const Fortnite = require("fortnite-publicapi");
 const Discord = require('discord.js');
 const blaki = new Discord.Client({disableEveryone: true});
+const shop = require("./shop.json");
 require('dotenv-flow').config();
 
 const fs = require("fs");
@@ -21,7 +22,7 @@ blaki.on('ready', async () =>
   setInterval(async () => {
       Fortnite.FortniteStore('en', async (data) => {
         data = JSON.parse(data);
-        let channel = bot.channels.find('id', cfg.channelid);
+        let channel = bot.channels.find('id', shop.channelid);
         if(channel) {
           if(channel.topic !== data['date']){
             channel.setTopic(data['date']);
@@ -30,14 +31,14 @@ blaki.on('ready', async () =>
               await list.push(element.item.images.information);
             });
 
-            channel.send(cfg.msg.replace(`{DATE}`, `${data['date']}`));
+            channel.send(shop.msg.replace(`{DATE}`, `${data['date']}`));
             list.forEach(async element => {
               await channel.sendFile(element);
             });
           }
         }
       });
-    }, cfg.refresh*1000);
+    }, shop.refresh*1000);
     
   const guild = blaki.guilds.get('535089879420502017');
   setInterval(function() 
