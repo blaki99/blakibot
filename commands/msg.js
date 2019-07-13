@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (blaki, message, args) => {
 
-    let Szefuncio = message.guild.roles.find("name", "HOST 🔌");
+    let host = message.guild.roles.find("name", "HOST 🔌");
 
     let msg = (args[0]);
     let msg2 = args.slice(1).join(' ')
@@ -10,7 +10,7 @@ module.exports.run = async (blaki, message, args) => {
     const ramka2 = "``"
     const check = '599045521553883139'
 
-    if(!message.member.roles.has(Szefuncio.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
+    if(!message.member.roles.has(host.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **!msg <wiadomość>**_ ❌")
     message.delete();
     let msgEmbed = new Discord.RichEmbed()
