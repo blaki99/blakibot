@@ -15,10 +15,11 @@ module.exports.run = async (blaki, message, args) => {
               await list.push(element.item.images.information);
             });
 
-            channel.send(shop.msg.replace(`{DATE}`, `**${data['date']}**`));
             list.forEach(async element => {
                let bEmbed = new Discord.RichEmbed()
                .setColor("#18a6e8")
+               .setTitle(shop.msg.replace(`{DATE}`, `**${data['date']}**`)
+               .setDescription("**KOD W SKLEPIE BLAKI**")
                .setImage(`${element}`)
                .setTimestamp(message.createdAt)
                .setFooter('Wspieraj Najlepszego Twórcę!', 'https://i.imgur.com/cgF1hsE.png');
