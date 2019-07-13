@@ -19,7 +19,7 @@ module.exports.run = async (blaki, message, args) => {
             list.forEach(async element => {
                let bEmbed = new Discord.RichEmbed()
                .setColor("#18a6e8")
-               .setImage(element)
+               .setImage(`${element}`)
                .setTimestamp(message.createdAt)
                .setFooter('Wspieraj Najlepszego Twórcę!', 'https://i.imgur.com/cgF1hsE.png');
                await channel.sendFile(bEmbed);
