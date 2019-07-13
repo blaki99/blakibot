@@ -30,7 +30,7 @@ blaki.on('ready', async () =>
             data['items'].forEach(async element => {
               await list.push(element.item.images.information);
             });
-            message.channel.bulkDelete("30");
+            message.channel.bulkDelete("50");
             list.forEach(async element => {
                let bEmbed = new Discord.RichEmbed()
                .setColor("#18a6e8")
