@@ -18,7 +18,7 @@ module.exports.run = async (blaki, message, args) => {
             list.forEach(async element => {
                let bEmbed = new Discord.RichEmbed()
                .setColor("#18a6e8")
-               .setTitle(shop.msg.replace(`{DATE}`, `**${data['date']}**`)
+               .setTitle("shop.msg.replace(`{DATE}`, `**${data['date']}**`")
                .setDescription("**KOD W SKLEPIE BLAKI**")
                .setImage(`${element}`)
                .setTimestamp(message.createdAt)
