@@ -6,8 +6,8 @@ module.exports.run = async (blaki, message, args) => {
 
     let msg = (args[0]);
     let msg2 = args.slice(1).join(' ')
-    const ramka = "```yaml"
-    const ramka2 = "```"
+    const ramka = "``"
+    const ramka2 = "``"
     const check = '599045521553883139'
 
     if(!message.member.roles.has(Szefuncio.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
@@ -16,8 +16,7 @@ module.exports.run = async (blaki, message, args) => {
     let msgEmbed = new Discord.RichEmbed()
     .setColor("#18a6e8")
     .setDescription(`**KOMUNIKAT OD:** ${message.author}`)
-    .addField("__**INFORMACJA**__", `${ramka}
-${msg} ${msg2}${ramka2}`)
+    .addField("__**INFORMACJA**__", `${ramka}${msg} ${msg2}${ramka2}`)
     .setTimestamp(message.createdAt)
     .setFooter("Kliknij reakcje jeśli przeczytałeś", "https://i.imgur.com/cgF1hsE.png");
     message.channel.send(msgEmbed).then(function (message) {
