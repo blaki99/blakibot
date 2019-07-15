@@ -1,9 +1,6 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (blaki, message, args) => {
-
-	const args = message.content.split(/ +/g);
-    const command = args.shift().slice(config.prefix.length).toLowerCase();
 	
 	if (!message.guild.me.permissions.has('MANAGE_CHANNELS')) {
 		message.channel.send('Error 69');
