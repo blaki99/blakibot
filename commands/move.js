@@ -43,17 +43,17 @@ module.exports.run = async (blaki, message, args) => {
 	
 	fromChannel.fetchMessages(args[1]).then(async (message) => {
 		var wbs = await toChannel.fetchWebhooks();
-		if (wbs.size < 1) var wb = await toChannel.createWebhook('Move Message');
+		if (wbs.size < 1) var wb = await toChannel.createWebhook('Przenoszenie ...');
 		else var wb = wbs.first();
 
-		wb.send(message.content || '', { username: message.author, embeds: message.embeds }).then(() => {
-		  m.edit('Moved message from user ' + Discord.Util.escapeMarkdownw(message.author) + ' from ' + fromChannel.toString() + ' to ' + toChannel.toString());
+		wwb.send(message.content || '', { username: message.author.tag, avatarURL: message.author.avatarURL(), embeds: message.embeds, files: message.attachments.array() }).then(() => {
+				m.edit('Moved message from user ' + Discord.Util.escapeMarkdownw(message.author.tag) + ' from ' + fromChannel.toString() + ' to ' + toChannel.toString());
+			}).catch((e) => {
+				m.edit(e.message || 'Unknown Error');
+			})
 		}).catch((e) => {
-		  m.edit(e.message || 'Unknown Error');
-		})
-	}).catch((e) => {
 			m.edit(e.message || 'Unknown Error');
-	});
+		});
 }
 
 module.exports.help = {
