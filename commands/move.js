@@ -20,7 +20,7 @@ module.exports.run = (blaki, message, args) => {
                    .setColor("#FF0000")
                    .setTitle(`Wiadomość przeniesiona z: #${orig_message.channel.name}`)
                    .setThumbnail(orig_message.author.avatarURL)
-                   .setAuthor(orig_message.author.username)
+                   .setDescription("**Autor:**", orig_message.author.username)
                    .addField("**Oryginalna Wiadomość:**", `${ramka}${orig_message.attachments.first().proxyURL}${ramka}`)
                 if (orig_message.attachments.first().filename.endsWith('.jpg') || orig_message.attachments.first().filename.endsWith('.png')) {
                     messageEmbed
@@ -31,7 +31,7 @@ module.exports.run = (blaki, message, args) => {
                     .setColor("#FF0000")
                     .setTitle(`Wiadomość przeniesiona z: #${orig_message.channel.name}`)
                     .setThumbnail(orig_message.author.url)
-                    .setAuthor(orig_message.author.username)
+                    .setDescription("**Autor:**", orig_message.author.username)
                     .addField("**Oryginalna Wiadomość:**", `${ramka}${orig_message.content}${ramka}`)
             }
 
