@@ -55,7 +55,7 @@ blaki.on('ready', async () =>
     const TwitchChannel = blaki.channels.get("600336192243761166");
     var HumansCount = guild.memberCount;
     var OnlineCount = guild.members.filter(member => member.presence.status == 'online' || member.presence.status == 'idle' || member.presence.status == 'dnd').size
-    var TwitchCount = guild.member.roles.find(r => r.name === "TWITCH SUBS 💜");
+    var TwitchCount = guild.member.roles(r => r.name === "TWITCH SUBS 💜");
     DateChannel.setName("📅 " + date.format(now, 'DD.MM.YYYY'));
     OnlineChannel.setName("🔋 Aktywni: " + OnlineCount);
     HumansChannel.setName("👑 Jest Nas: " + HumansCount);
