@@ -42,9 +42,9 @@ module.exports.run = async (blaki, message, args) => {
 	let m = await message.channel.send('Moving message...');
 
 	fromChannel.messages.fetch(args[1]).then(async (message) => {
-		let wbs = await toChannel.fetchWebhooks();
-		if (wbs.size < 1) let wb = await toChannel.createWebhook('Move Message');
-		else let wb = wbs.first();
+		var wbs = await toChannel.fetchWebhooks();
+		if (wbs.size < 1) var wb = await toChannel.createWebhook('Move Message');
+		else var wb = wbs.first();
 
 		wb.send(message.content || '', { username: message.author.tag, avatarURL: message.author.avatarURL(), embeds: message.embeds, files: message.attachments.array() }).then(() => {
 		  m.edit('Moved message from user ' + Discord.Util.escapeMarkdownw(message.author.tag) + ' from ' + fromChannel.toString() + ' to ' + toChannel.toString());
