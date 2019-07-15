@@ -52,11 +52,14 @@ blaki.on('ready', async () =>
     const DateChannel = blaki.channels.get("569618740631699486");
     const HumansChannel = blaki.channels.get("535591376373678084");
     const OnlineChannel = blaki.channels.get("535591322430734349");
+    const TwitchChannel = blaki.channels.get("600336192243761166");
     var HumansCount = guild.memberCount;
     var OnlineCount = guild.members.filter(member => member.presence.status == 'online' || member.presence.status == 'idle' || member.presence.status == 'dnd').size
+    var TwitchCount = guild.members.roles.has("585938544246128650");
     DateChannel.setName("📅 " + date.format(now, 'DD.MM.YYYY'));
     OnlineChannel.setName("🔋 Aktywni: " + OnlineCount);
     HumansChannel.setName("👑 Jest Nas: " + HumansCount);
+    TwitchChannel.setName("💜 Twitch Subs: " + TwitchCount);
   }, 20000)
 });
 
