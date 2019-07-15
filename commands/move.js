@@ -33,11 +33,6 @@ module.exports.run = async (blaki, message, args) => {
 		return;
 	}
 
-	/*if (!toChannel.permissionsFor(message.member).has('SEND_MESSAGES')) {
-		message.channel.send('Nie możesz przenieść wiadomości na kanał, do którego nie masz uprawnień!');
-		return;
-	}*/
-
 	var fromChannel = message.channel;
 	if (args[2]) {
 		fromChannel = message.guild.channels.get(args[2].replace(/<#|>/g, ''));
@@ -59,7 +54,7 @@ module.exports.run = async (blaki, message, args) => {
 	}).catch((e) => {
 			m.edit(e.message || 'Unknown Error');
 	});
-});
+}
 
 module.exports.help = {
   name: "move"
