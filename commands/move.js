@@ -4,6 +4,7 @@ const config = require("../blakiconfig.json");
 module.exports.run = (blaki, message, args) => {
 
     message.delete().catch(O_o=>{});
+    const ramka = "```"
     if (message.member.roles.some(r=>[config.modrole].includes(r.name))) {
         let destchannel = message.mentions.channels.first();
         if (destchannel == null) {
@@ -20,7 +21,7 @@ module.exports.run = (blaki, message, args) => {
                    .setTitle(`Wiadomość przeniesiona z: #${orig_message.channel.name}`)
                    .setThumbnail(orig_message.author.avatarURL)
                    .setAuthor(orig_message.author.username)
-                   .addField("**Oryginalna Wiadomość:**", orig_message.attachments.first().proxyURL)
+                   .addField("**Oryginalna Wiadomość:**", `${ramka}orig_message.attachments.first().proxyURL${ramka}`)
                 if (orig_message.attachments.first().filename.endsWith('.jpg') || orig_message.attachments.first().filename.endsWith('.png')) {
                     messageEmbed
                         .setImage(orig_message.attachments.first().proxyURL)
@@ -31,7 +32,7 @@ module.exports.run = (blaki, message, args) => {
                     .setTitle(`Wiadomość przeniesiona z: #${orig_message.channel.name}`)
                     .setThumbnail(orig_message.author.url)
                     .setAuthor(orig_message.author.username)
-                    .addField("**Oryginalna Wiadomość:**", orig_message.content)
+                    .addField("**Oryginalna Wiadomość:**", `${ramka}orig_message.content${ramka}`)
             }
 
 
