@@ -29,11 +29,7 @@ module.exports.run = async (blaki, message, args) => {
     .addField("**ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4)
     .setTimestamp(message.createdAt)
     .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/cgF1hsE.png");
-    
-    a = Array.from(message.channel.guild.channels.values());
-    for (let i = a.length; i--;)
-    if (a[i].type == "text")
-        a[i].send(`@everyone`);
+    message.channel.send(`@everyone`);
     message.channel.send(customEmbed).then(function (message) {
         message.react(check)
     })
