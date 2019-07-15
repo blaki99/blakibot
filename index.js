@@ -19,33 +19,6 @@ blaki.on('ready', async () =>
   console.log(`${blaki.user.username} jest online!`);
   blaki.user.setActivity('KOD BLAKI W SKLEPIE', { type: 'WATCHING'});
     
-  setInterval(async () => {
-      Fortnite.FortniteStore('en', async (data) => {
-        data = JSON.parse(data);
-        let channel = blaki.channels.find('id', shop.channelid);
-        if(channel) {
-          if(channel.topic !== data['date']){
-            channel.setTopic(data['date']);
-            var list = [];
-            data['items'].forEach(async element => {
-              await list.push(element.item.images.information);
-            });
-            message.channel.bulkDelete("50");
-            list.forEach(async element => {
-               let bEmbed = new Discord.RichEmbed()
-               .setColor("#18a6e8")
-               .setTitle(`**SKLEP ${data['date']}**`)
-               .setDescription("**KOD W SKLEPIE BLAKI**")
-               .setImage(`${element}`)
-               .setTimestamp(message.createdAt)
-               .setFooter('Wspieraj Najlepszego Twórcę!', 'https://i.imgur.com/cgF1hsE.png');
-               await channel.send(bEmbed);
-            });
-          }
-        }
-      });
-    }, shop.refresh*1000);
-    
   const guild = blaki.guilds.get('535089879420502017');
   setInterval(function() 
   {
@@ -80,6 +53,34 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 blaki.on("message", async message => {
+    
+    setInterval(async () => {
+      Fortnite.FortniteStore('en', async (data) => {
+        data = JSON.parse(data);
+        let channel = blaki.channels.find('id', shop.channelid);
+        if(channel) {
+          if(channel.topic !== data['date']){
+            channel.setTopic(data['date']);
+            var list = [];
+            data['items'].forEach(async element => {
+              await list.push(element.item.images.information);
+            });
+            message.channel.bulkDelete("50");
+            list.forEach(async element => {
+               let bEmbed = new Discord.RichEmbed()
+               .setColor("#18a6e8")
+               .setTitle(`**SKLEP ${data['date']}**`)
+               .setDescription("**KOD W SKLEPIE BLAKI**")
+               .setImage(`${element}`)
+               .setTimestamp(message.createdAt)
+               .setFooter('Wspieraj Najlepszego Twórcę!', 'https://i.imgur.com/cgF1hsE.png');
+               await channel.send(bEmbed);
+            });
+          }
+        }
+      });
+    }, shop.refresh*1000);
+    
     if(message.author.blaki) return;
     if(message.channel.type === "dm") return;
   
