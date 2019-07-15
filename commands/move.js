@@ -22,7 +22,7 @@ module.exports.run = async (blaki, message, args) => {
 		return;
 	}
 
-	let toChannel = message.guild.channels.get(args[0].replace(/<#|>/g, ''));
+	var toChannel = message.guild.channels.get(args[0].replace(/<#|>/g, ''));
 	if (!toChannel) {
 		message.channel.send('Nie znaleziono oznaczonego kanału!');
 		return;
@@ -33,15 +33,15 @@ module.exports.run = async (blaki, message, args) => {
 		return;
 	}
 
-	let fromChannel = message.channel;
+	var fromChannel = message.channel;
 	if (args[2]) {
 		fromChannel = message.guild.channels.get(args[2].replace(/<#|>/g, ''));
 		if (!fromChannel || fromChannel.type !== 'text') fromChannel = message.channel;
 	}
 
-	let m = await message.channel.send('Moving message...');
-
-	fromChannel.messages.fetch(args[1]).then(async (message) => {
+	var m = await message.channel.send('Przenoszenie Wiadomości...');
+	
+	fromChannel.fetchMessages(args[1]).then(async (message) => {
 		var wbs = await toChannel.fetchWebhooks();
 		if (wbs.size < 1) var wb = await toChannel.createWebhook('Move Message');
 		else var wb = wbs.first();
