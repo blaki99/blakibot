@@ -1,60 +1,54 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
+const config = require("../blakiconfig.json");
 
-module.exports.run = async (blaki, message, args) => {
-	
-	if (!message.guild.me.permissions.has('MANAGE_CHANNELS')) {
-		message.channel.send('Error 69');
-		return;
-	}
+module.exports.run = (blaki, message, args) => {
 
-	if (!message.member.permissions.has('MANAGE_MESSAGES')) {
-		message.channel.send('Oops, nie posiadasz uprawnień do zarządzania wiadomościami!');
-		return;
-	}
 
-	if (!args[0] || !args[1]) {
-		message.channel.send('Usage: !move <docelowy kanał> <id wiadomości> <kanał początkowy>');
-		return;
-	}
+    if (message.member.roles.some(r=>[config.modrole].includes(r.name))) {
+        let destchannel = message.mentions.channels.first();
+        if (destchannel == null) {
+            message.channel.send('The channel could not be found or you have mentioned/entered an incorrect channel.')
+            return;
+        }
 
-	if (!Discord.MessageMentions.CHANNELS_PATTERN.test(args[0])) {
-		message.channel.send('Nieprawidłowy kanał!');
-		return;
-	}
 
-	var toChannel = message.guild.channels.get(args[0].replace(/<#|>/g, ''));
-	if (!toChannel) {
-		message.channel.send('Nie znaleziono oznaczonego kanału!');
-		return;
-	}
+        message.channel.fetchMessage(args[0]).then(orig_message => {
+            let messageEmbed = new Discord.RichEmbed()
+            if (orig_message.attachments.array(0).length !== 0  ) {
+               messageEmbed
+                   .setTitle(`Moved message from: #${orig_message.channel.name}`)
+                   .setThumbnail(orig_message.author.avatarURL)
+                   .setAuthor(orig_message.author.username)
+                   .addField("Original Message", orig_message.attachments.first().proxyURL)
+                if (orig_message.attachments.first().filename.endsWith('.jpg') || orig_message.attachments.first().filename.endsWith('.png')) {
+                    messageEmbed
+                        .setImage(orig_message.attachments.first().proxyURL)
+                }
+            } else {
+                messageEmbed
+                    .setTitle(`Moved message from: #${orig_message.channel.name}`)
+                    .setThumbnail(orig_message.author.url)
+                    .setAuthor(orig_message.author.username)
+                    .addField("Original Message", orig_message.content)
+            }
 
-	if (toChannel.type !== 'text') {
-		message.channel.send('Oznaczony kanał nie istnieje');
-		return;
-	}
 
-	var fromChannel = message.channel;
-	if (args[2]) {
-		fromChannel = message.guild.channels.get(args[2].replace(/<#|>/g, ''));
-		if (!fromChannel || fromChannel.type !== 'text') fromChannel = message.channel;
-	}
 
-	var m = await message.channel.send('Przenoszenie Wiadomości...');
-	
-	fromChannel.fetchMessages(args[1]).then(async (message) => {
-		var wbs = await toChannel.fetchWebhooks();
-		if (wbs.size < 1) var wb = await toChannel.createWebhook('Przenoszenie ...');
-		else var wb = wbs.first();
+            message.channel.send(`This message has been moved to ${destchannel}`)
+            destchannel.send(messageEmbed);
+            orig_message.delete()
+        }).catch(err => {
+            if (err.message == "Unknown Message"){
+                message.channel.send("The message could not be found.")
+            } else {
+                console.log(err)
+            }
+        })
+    } else {
+        message.channel.send("You do not have permission to execute this command.")
+    }
 
-		wwb.send(message.content || '', { username: message.author.tag, avatarURL: message.author.avatarURL(), embeds: message.embeds, files: message.attachments.array() }).then(() => {
-				m.edit('Moved message from user ' + Discord.Util.escapeMarkdownw(message.author.tag) + ' from ' + fromChannel.toString() + ' to ' + toChannel.toString());
-			}).catch((e) => {
-				m.edit(e.message || 'Unknown Error');
-			})
-		}).catch((e) => {
-			m.edit(e.message || 'Unknown Error');
-		});
-}
+};
 
 module.exports.help = {
   name: "move"
