@@ -6,7 +6,7 @@ module.exports.run = async (blaki, message, args) => {
 
     let pass = (args[0]);
     let mode = args.slice(1).join(' ')
-    const ping = "<@&535089879420502017>"
+    var ping = message.channel.server.roles.get('name', '@everyone');
     const zasady0 = "**» NIE** WALCZ DOPÓKI NIE ZAMKNIE SIĘ 2 STREFA!"
     const zasady1 = "**» NIE** UŻYWAJ TRYBU ANONIMOWEGO PODCZAS GRY!"
     const zasady2 = "**» NIE** LATAJ NA SUNNY STEPS KIEDY GRA BLAKI"
@@ -30,7 +30,7 @@ module.exports.run = async (blaki, message, args) => {
     .addField("**ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4)
     .setTimestamp(message.createdAt)
     .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/cgF1hsE.png");
-    message.channel.send(ping);
+    message.channel.send(ping.mention());
     message.channel.send(customEmbed).then(function (message) {
         message.react(check)
     })
