@@ -32,7 +32,7 @@ module.exports.run = (blaki, message, args) => {
                     .setTitle(`Wiadomość przeniesiona z: #${orig_message.channel.name}`)
                     .setThumbnail(orig_message.author.url)
                     .setAuthor(orig_message.author.username)
-                    .addField("**Oryginalna Wiadomość:**", `${ramka} orig_message.content ${ramka}`)
+                    .addField("**Oryginalna Wiadomość:**", `${ramka}${orig_message.content}${ramka}`)
             }
 
 
