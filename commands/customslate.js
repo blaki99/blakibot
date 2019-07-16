@@ -6,7 +6,7 @@ module.exports.run = async (blaki, message, args) => {
 
     let pass = (args[0]);
     let mode = args.slice(1).join(' ')
-    const ping = "@everyone"
+    const ping = "<@&568239820715851776>"
     const zasady0 = "**» NIE** WALCZ DOPÓKI NIE ZAMKNIE SIĘ 2 STREFA!"
     const zasady1 = "**» NIE** UŻYWAJ TRYBU ANONIMOWEGO PODCZAS GRY!"
     const zasady2 = "**» NIE** LATAJ NA SUNNY STEPS KIEDY GRA BLAKI"
