@@ -1,7 +1,7 @@
 const blakiconfig = require("./blakiconfig.json");
 const Fortnite = require("fortnite-publicapi");
 const Discord = require('discord.js');
-const blaki = new Discord.Client({disableEveryone: true});
+const blaki = new Discord.Client({disableEveryone: false});
 const shop = require("./shop.json");
 require('dotenv-flow').config();
 
