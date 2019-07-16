@@ -32,8 +32,7 @@ module.exports.run = async (blaki, message, args) => {
     .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/cgF1hsE.png");
     if (message.guild.me.hasPermission(everyone.permissions)) {
     message.channel.send(everyone.toString());
-    } else {
-    console.log("I can't mention everyone");
+    }
     message.channel.send(customEmbed).then(function (message) {
         message.react(check)
     })
