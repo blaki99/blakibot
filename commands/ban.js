@@ -22,7 +22,7 @@ module.exports.run = async (blaki, message, args) => {
         .addField("Zbanowany Przez", `<@${message.author.id}>`)
         .addField("Powód", bReason)
         .setTimestamp(message.createdAt)
-        .setFooter('Zostałeś zbanowany!', 'https://i.imgur.com/cgF1hsE.png');
+        .setFooter('Zostałeś zbanowany!', 'https://i.imgur.com/rKIoF4Z.png');
         await bUser.send(DMbanEmbed)
     }catch(e){
         message.channel.send(`Użytkownik został zbanowany na **BlaKi's Discord** ale niestemy ma zablokowane wiadomości prywatne.`)
@@ -35,7 +35,7 @@ module.exports.run = async (blaki, message, args) => {
     .addField("Zbanowany Na", message.channel)
     .addField("Powód", bReason)
     .setTimestamp(message.createdAt)
-    .setFooter('Zbanowano Użytkownika', 'https://i.imgur.com/cgF1hsE.png');
+    .setFooter('Zbanowano Użytkownika', 'https://i.imgur.com/rKIoF4Z.png');
 
     let incidentchannel = message.guild.channels.find(`name`, "📕  »  ᴅᴢɪᴇɴɴɪᴋ  ᴢᴅᴀʀᴢᴇɴ");
     if(!incidentchannel) return message.channel.send("❌ **Proszę utworzyć kanał zdarzeń** ❌");
