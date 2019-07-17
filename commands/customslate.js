@@ -12,7 +12,7 @@ module.exports.run = async (blaki, message, args) => {
     const zasady2 = "**» NIE** LATAJ NA SUNNY STEPS KIEDY GRA BLAKI"
     const zasady3 = "**» NIE** BIEGAJ ZA OSOBĄ, KTÓRA HOSTUJE!"
     const zasady4 = "**» NIE** BIJEMY SIĘ NA PIERWSZYCH MIEJSCÓWKACH !"
-    const check = '600601848898125835'
+    const check = '601185797097652224'
 
     if(!message.member.roles.has(HOST.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **!late hasło tryb**_ ❌").then(() =>
@@ -29,7 +29,7 @@ module.exports.run = async (blaki, message, args) => {
     .addField("**TRYB:**", `**${mode}**`)
     .addField("**ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4)
     .setTimestamp(message.createdAt)
-    .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/rKIoF4Z.png");
+    .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/mNBIfzO.png");
     message.channel.send(everyone.toString());
     message.channel.send(customEmbed).then(function (message) {
         message.react(check)
