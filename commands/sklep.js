@@ -22,7 +22,7 @@ module.exports.run = async (blaki, message, args) => {
                .setDescription("**KOD W SKLEPIE BLAKI**")
                .setImage(`${element}`)
                .setTimestamp(message.createdAt)
-               .setFooter('Wspieraj Najlepszego Twórcę!', 'https://i.imgur.com/rKIoF4Z.png');
+               .setFooter('Wspieraj Najlepszego Twórcę!', 'https://i.imgur.com/mNBIfzO.png');
                await channel.send(bEmbed);
             });
           }
