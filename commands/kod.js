@@ -8,7 +8,7 @@ module.exports.run = async (blaki, message, args) => {
     .setColor("#18a6e8")
     .setImage('https://i.imgur.com/jj2M5mv.png')
     .setTimestamp(message.createdAt)
-    .setFooter('Wspieraj Najlepszego Twórcę!', 'https://i.imgur.com/rKIoF4Z.png');
+    .setFooter('Wspieraj Najlepszego Twórcę!', 'https://i.imgur.com/mNBIfzO.png');
 
     message.channel.send(serverembed);
 }
