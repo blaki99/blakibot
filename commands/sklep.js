@@ -17,7 +17,7 @@ module.exports.run = async (blaki, message, args) => {
             message.channel.bulkDelete("50");
             list.forEach(async element => {
                let bEmbed = new Discord.RichEmbed()
-               .setColor("#18a6e8")
+               .setColor("#ff005c")
                .setTitle(`**SKLEP ${data['date']}**`)
                .setDescription("**KOD W SKLEPIE BLAKI**")
                .setImage(`${element}`)
