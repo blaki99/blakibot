@@ -6,7 +6,7 @@ module.exports.run = async (blaki, message, args) => {
 
     let msg = (args[0]);
     let msg2 = args.slice(1).join(' ')
-    const ramka = "```md"
+    const ramka = "```cs"
     const ramka2 = "```"
     const check = '601185797097652224'
 
@@ -14,7 +14,7 @@ module.exports.run = async (blaki, message, args) => {
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **!msg <wiadomość>**_ ❌")
     message.delete();
     let msgEmbed = new Discord.RichEmbed()
-    .setColor("#18a6e8")
+    .setColor("#ff005c")
     .setDescription(`**KOMUNIKAT OD:** ${message.author}`)
     .addField("__**INFORMACJA**__", `${ramka}
 # ${msg} ${msg2}${ramka2}`)
