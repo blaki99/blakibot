@@ -21,7 +21,7 @@ module.exports.run = async (blaki, message, args) => {
     })
     message.delete();
     let customEmbed = new Discord.RichEmbed()
-    .setColor("#18a6e8")
+    .setColor("#ff005c")
     .setDescription(`**HOST:** ${message.author}`)
     .setThumbnail('https://i.imgur.com/rmxBcdK.png')
     .setTitle("__**POWIADOMIENIE O NOWEJ GRZE**__")
