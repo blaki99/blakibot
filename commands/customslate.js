@@ -10,7 +10,7 @@ module.exports.run = async (blaki, message, args) => {
     const zasady0 = "**» NIE** WALCZ DOPÓKI NIE ZAMKNIE SIĘ 2 STREFA!"
     const zasady1 = "**» NIE** UŻYWAJ TRYBU ANONIMOWEGO PODCZAS GRY!"
     const zasady2 = "**» NIE** LATAJ NA SUNNY STEPS KIEDY GRA BLAKI"
-    const zasady3 = "**» NIE** BIEGAJ ZA OSOBĄ, KTÓRA HOSTUJE!"
+    const zasady3 = "**» NIE** WALCZ JEŚLI PRZED 3 STREFĄ WŁĄCZY SIĘ STORM SURGE"
     const zasady4 = "**» NIE** BIJEMY SIĘ NA PIERWSZYCH MIEJSCÓWKACH !"
     const check = '601185797097652224'
 
