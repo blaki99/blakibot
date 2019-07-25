@@ -24,10 +24,10 @@ module.exports.run = async (blaki, message, args) => {
     .setColor("#ff005c")
     .setDescription(`**» HOST:** ${message.author}`)
     .setThumbnail('https://i.imgur.com/rmxBcdK.png')
-    .setTitle("__**POWIADOMIENIE O NOWEJ GRZE**__")
-    .addField("**» HASŁO:**", `**${pass}**`)
-    .addField("**» TRYB:**", `**${mode}**`)
-    .addField("**» ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4)
+    .setTitle("__**NOWA GRA!**__")
+    .addField("**HASŁO:**", `**${pass}**`)
+    .addField("**TRYB:**", `**${mode}**`)
+    .addField("**ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4)
     .setTimestamp(message.createdAt)
     .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/mNBIfzO.png");
     message.channel.send(everyone.toString());
