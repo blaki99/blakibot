@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (blaki, message, args) => {
 
-    let host = message.guild.roles.find("name", "HOST 🔌");
+    let host = message.guild.roles.find("name", "🔌 » HOST");
 
     let msg = (args[0]);
     let msg2 = args.slice(1).join(' ')
