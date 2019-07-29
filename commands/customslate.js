@@ -22,9 +22,9 @@ module.exports.run = async (blaki, message, args) => {
     message.delete();
     let customEmbed = new Discord.RichEmbed()
     .setColor("#ff005c")
-    .setDescription(`**HOST:** ${message.author}`)
     .setThumbnail('https://i.imgur.com/rmxBcdK.png')
     .setTitle("__**NOWA GRA!**__")
+     .addField("**HOST:**", `${message.author}`, true)
     .addField("**HASŁO:**", `**${pass}**`)
     .addField("**TRYB:**", `**${mode}**`)
     .addField("**ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4)
