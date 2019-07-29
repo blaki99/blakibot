@@ -15,7 +15,7 @@ module.exports.run = async (blaki, message, args) => {
     message.delete();
     let msgEmbed = new Discord.RichEmbed()
     .setColor("#ff005c")
-    .addField("__**INFORMACJA**__", `${ramka}
+    .addField("__**INFORMACJA:**__", `${ramka}
 # ${msg} ${msg2}${ramka2}`, true)
     .addField("__**OD:**__", `${message.author}`, true)
     .setTimestamp(message.createdAt)
