@@ -16,8 +16,8 @@ module.exports.run = async (blaki, message, args) => {
     let msgEmbed = new Discord.RichEmbed()
     .setColor("#ff005c")
     .addField("__**INFORMACJA**__", `${ramka}
-# ${msg} ${msg2}${ramka2}`)
-    .addField("__**OD:**__", `${message.author}`)
+# ${msg} ${msg2}${ramka2}`, true)
+    .addField("__**OD:**__", `${message.author}`, true)
     .setTimestamp(message.createdAt)
     .setFooter("Kliknij reakcje jeśli przeczytałeś", "https://i.imgur.com/mNBIfzO.png");
     message.channel.send(msgEmbed).then(function (message) {
