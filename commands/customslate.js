@@ -28,6 +28,7 @@ module.exports.run = async (blaki, message, args) => {
     .addField("**HOST:**", `${message.author}`, true)
     .addField("**TRYB:**", `**${mode}**`)
     .addField("
+", "
 ")
     .addField("**ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4)
     .setTimestamp(message.createdAt)
