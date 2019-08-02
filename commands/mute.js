@@ -14,14 +14,14 @@ module.exports.run = async (blaki, message, args) => {
   if(mute.hasPermission("MANAGE_MESSAGES")) return message.reply("❌ **Nie można wyciszyć** ❌");
   let reason = args.slice(2).join(" ");
   if(!reason) return message.reply("❌ **Proszę wprowadzić powód** ❌");
-  let gRole = message.guild.roles.find(role => role.name === "VERIFIED 🔶️");
+  let gRole = message.guild.roles.find(role => role.name === "🔶️ » VERIFIED");
 
-  let muterole = message.guild.roles.find(`name`, "MUTED 🔇");
+  let muterole = message.guild.roles.find(`name`, "🔇 » MUTED");
   //start of create role
   if(!muterole){
     try{
       muterole = await message.guild.createRole({
-        name: "MUTED 🔇",
+        name: "🔇 » MUTED",
         color: "#000001",
         permissions:[]
       })
