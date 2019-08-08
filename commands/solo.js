@@ -22,7 +22,7 @@ module.exports.run = async (blaki, message, args) => {
     let customEmbed = new Discord.RichEmbed()
     .setColor("#ff005c")
     .setThumbnail('https://i.imgur.com/rmxBcdK.png')
-    .setTitle("__**NEW SOLO CUSTOM!**__")
+    .setTitle("__**ARENA SOLO CUSTOM!**__")
     .setURL("https://twitch.tv/blakii")
     .addField("**HASŁO:**", `**${pass}**`, true)
     .addField("**HOST:**", `${message.author}`, true)
