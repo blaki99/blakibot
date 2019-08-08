@@ -1,4 +1,4 @@
-cccconst Discord = require("discord.js");
+const Discord = require("discord.js");
 
 module.exports.run = async (blaki, message, args) => {
 
@@ -14,7 +14,7 @@ module.exports.run = async (blaki, message, args) => {
     const check = '601185797097652224'
 
     if(!message.member.roles.has(HOST.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
-    if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **!late hasło tryb**_ ❌").then(() =>
+    if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **!solo hasło**_ ❌").then(() =>
     {
         message.channel.send("❌ _**Utwórz hasło, które nie będzie za krótkie!**_ ❌");
     })
