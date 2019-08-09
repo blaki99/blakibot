@@ -23,7 +23,7 @@ module.exports.run = async (blaki, message, args) => {
     let customEmbed = new Discord.RichEmbed()
     .setColor("#ffa500")
     .setThumbnail('https://i.imgur.com/rmxBcdK.png')
-    .setTitle(`**${mode} GAME**`)
+    .setTitle(`**${mode} CUSTOM**`)
     .setURL('https://discord.gg/u9W8euF')
     .addField("**HASŁO:**", `**${pass}**`, true)
     .addField("**HOST:**", `${message.author}`, true)
