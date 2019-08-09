@@ -12,7 +12,7 @@ module.exports.run = async (blaki, message, args) => {
     const zasady2 = "**» NIE** STREAMSNIPUJ INNYCH GRACZY !"
     const zasady3 = "**» NIE** UŻYWAJ TRYBU ANONIMOWEGO PODCZAS GRY !"
     const zasady4 = "**NIESTOSOWANIE SIĘ DO POWYŻSZYCH ZASAD BĘDZIE KARANE BANEM !**"
-    const react = '609463766681255936'
+    const react = '609497709593755668'
   
     if(!message.member.roles.has(HOST.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **.solo hasło **_ ❌").then(() =>
