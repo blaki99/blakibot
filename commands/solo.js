@@ -28,7 +28,7 @@ module.exports.run = async (blaki, message, args) => {
     .addField("**HOST:**", `${message.author}`, true)
     .addField("**ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ `n`+ zasady4)
     .setTimestamp(message.createdAt)
-    .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/etQAdfG.png");
+    .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/3Q7TQyy.png");
     message.channel.send(everyone.toString());
     message.channel.send(customEmbed).then(function (message) {
         message.react(react)
