@@ -39,8 +39,6 @@ module.exports.run = async (blaki, message, args) => {
   let mutetime = args[1];
   if(!mutetime) return message.reply("❌ **Nie podano czasu wyciszenia** ❌");
 
-  message.delete().catch(O_o=>{});
-
    try{
         let DMMuteEmbed = new Discord.RichEmbed()
         .setColor("#ff3300")
