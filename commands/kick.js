@@ -12,8 +12,6 @@ module.exports.run = async (blaki, message, args) => {
     let kReason = args.join(" ").slice(22);
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ **Nie można wyrzucić tego użytkownika** ❌");
 
-    message.delete().catch(O_o=>{});
-    
     try{
         let DMkickEmbed = new Discord.RichEmbed()
         .setColor("#ff3300")
