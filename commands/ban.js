@@ -14,26 +14,26 @@ module.exports.run = async (blaki, message, args) => {
     
     try{
         let DMbanEmbed = new Discord.RichEmbed()
-        .setColor("#ff3300")
+        .setColor("#ffa500")
         .setTitle("__**ZOSTAŁEŚ ZBANOWANY**__")
         .addField("Serwer", `**BlaKi's Discord**`)
         .addField("Zbanowany Przez", `<@${message.author.id}>`)
         .addField("Powód", bReason)
         .setTimestamp(message.createdAt)
-        .setFooter('Zostałeś zbanowany!', 'https://i.imgur.com/mNBIfzO.png');
+        .setFooter('Zostałeś zbanowany!', 'https://i.imgur.com/3Q7TQyy.png');
         await bUser.send(DMbanEmbed)
     }catch(e){
         message.channel.send(`Użytkownik został zbanowany na **BlaKi's Discord** ale niestemy ma zablokowane wiadomości prywatne.`)
     }
 
     let banEmbed = new Discord.RichEmbed()
-    .setColor("#ff3300")
+    .setColor("#ffa500")
     .addField("Zbanowany Użytkownik", `${bUser}`)
     .addField("Zbanowany Przez", `<@${message.author.id}>`)
     .addField("Zbanowany Na", message.channel)
     .addField("Powód", bReason)
     .setTimestamp(message.createdAt)
-    .setFooter('Zbanowano Użytkownika', 'https://i.imgur.com/mNBIfzO.png');
+    .setFooter('Zbanowano Użytkownika', 'https://i.imgur.com/3Q7TQyy.png');
 
     let incidentchannel = message.guild.channels.find(`name`, "📕  »  ᴅᴢɪᴇɴɴɪᴋ  ᴢᴅᴀʀᴢᴇɴ");
     if(!incidentchannel) return message.channel.send("❌ **Proszę utworzyć kanał zdarzeń** ❌");
