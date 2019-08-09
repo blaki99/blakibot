@@ -17,7 +17,7 @@ module.exports.run = (blaki, message, args) => {
             let messageEmbed = new Discord.RichEmbed()
             if (orig_message.attachments.array(0).length !== 0  ) {
                messageEmbed
-                   .setColor("#FF0000")
+                   .setColor("#ffa500")
                    .setTitle(`Wiadomość przeniesiona z: #${orig_message.channel.name}`)
                    .setThumbnail(orig_message.author.avatarURL)
                    .setAuthor(orig_message.author.username)
@@ -28,7 +28,7 @@ module.exports.run = (blaki, message, args) => {
                 }
             } else {
                 messageEmbed
-                    .setColor("#FF0000")
+                    .setColor("#ffa500")
                     .setTitle(`Wiadomość przeniesiona z: #${orig_message.channel.name}`)
                     .setThumbnail(orig_message.author.url)
                     .setAuthor(orig_message.author.username)
