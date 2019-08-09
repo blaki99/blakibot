@@ -12,7 +12,7 @@ module.exports.run = async (blaki, message, args) => {
     const zasady2 = "**» NIE** LATAJ NA SUNNY STEPS KIEDY GRA BLAKI!"
     const zasady3 = "**» NIE** UŻYWAJ TRYBU ANONIMOWEGO PODCZAS GRY!"
     const zasady4 = "**» NIE** BIJEMY SIĘ NA PIERWSZYCH MIEJSCÓWKACH !"
-    const check = '601185797097652224'
+    const react = '609463766681255936'
   
     if(!message.member.roles.has(HOST.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **.solo hasło **_ ❌").then(() =>
@@ -31,7 +31,7 @@ module.exports.run = async (blaki, message, args) => {
     .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/etQAdfG.png");
     message.channel.send(everyone.toString());
     message.channel.send(customEmbed).then(function (message) {
-        message.react(check)
+        message.react(react)
     })
 }
  
