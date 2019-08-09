@@ -11,8 +11,7 @@ module.exports.run = async (blaki, message, args) => {
   if(!rMember.roles.has(role.id)) return message.reply("❌ **Ten użytkownik nie jest wyciszony** ❌");
   await(rMember.removeRole(role.id));
   await(rMember.addRole(gRole.id));
-  
-  message.delete().catch(O_o=>{});
+
   
   try{
         let DMUnMuteEmbed = new Discord.RichEmbed()
