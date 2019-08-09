@@ -12,8 +12,6 @@ module.exports.run = async (blaki, message, args) => {
     let bReason = args.join(" ").slice(22);
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ **Nie można zbanować tego użytkownika** ❌");
     
-    message.delete().catch(O_o=>{});
-    
     try{
         let DMbanEmbed = new Discord.RichEmbed()
         .setColor("#ff3300")
