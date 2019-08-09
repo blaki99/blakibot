@@ -41,14 +41,14 @@ module.exports.run = async (blaki, message, args) => {
 
    try{
         let DMMuteEmbed = new Discord.RichEmbed()
-        .setColor("#ff3300")
+        .setColor("#ffa500")
         .setTitle("__**ZOSTAŁEŚ WYCISZONY**__")
         .addField("Serwer", `**BlaKi's Discord**`)
         .addField("Zmutowany Przez", `<@${message.author.id}>`)
         .addField("Powód", reason)
         .addField("Czas Wyciszenia", mutetime)
         .setTimestamp(message.createdAt)
-        .setFooter('Zostałeś wyciszony!', 'https://i.imgur.com/mNBIfzO.png');
+        .setFooter('Zostałeś wyciszony!', 'https://i.imgur.com/3Q7TQyy.png');
         await mute.send(DMMuteEmbed)
     }catch(e){
         message.channel.send(`Użytkownik został wyciszony na **${mutetime}** ale niestemy ma zablokowane wiadomości prywatne.`)
@@ -56,13 +56,13 @@ module.exports.run = async (blaki, message, args) => {
 
   let muteembed = new Discord.RichEmbed()
   .setDescription(`Wyciszenie nadane przez ${message.author}`)
-  .setColor("#ff3300")
+  .setColor("#ffa500")
   .addField("Wyciszony Użytkownik", mute)
   .addField("Wyciszono na", message.channel)
   .addField("Czas Wyciszenia", mutetime)
   .addField("Powód", reason)
   .setTimestamp(message.createdAt)
-  .setFooter('Wyciszono Użytkownika', 'https://i.imgur.com/mNBIfzO.png');
+  .setFooter('Wyciszono Użytkownika', 'https://i.imgur.com/3Q7TQyy.png');
 
   let incidentschannel = message.guild.channels.find(`name`, "📕  »  ᴅᴢɪᴇɴɴɪᴋ  ᴢᴅᴀʀᴢᴇɴ");
   if(!incidentschannel) return message.reply("❌ **Proszę utworzyć kanał zdarzeń** ❌");
