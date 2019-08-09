@@ -23,7 +23,7 @@ module.exports.run = async (blaki, message, args) => {
     message.delete();
     let customEmbed = new Discord.RichEmbed()
     .setColor("#FFC125")
-    .setTitle("**ARENA SOLO CUSTOM - GAME**" + ` ${game}`)
+    .setTitle(`**ARENA SOLO CUSTOM - GAME ${game}**`)
     .setURL('https://discord.js.org/')
     .addField("**HASŁO:**", `**${pass}**`, true)
     .addField("**HOST:**", `${message.author}`, true)
