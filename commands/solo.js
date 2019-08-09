@@ -2,7 +2,7 @@ const Discord = require("discord.js");
  
 module.exports.run = async (blaki, message, args) => {
  
-    let HOST = message.guild.roles.find("name", "Staff");
+    let HOST = message.guild.roles.find("name", "🔌 » HOST");
  
     let pass = (args[0]);
     let game = args.slice(1).join(' ')
@@ -13,7 +13,7 @@ module.exports.run = async (blaki, message, args) => {
     const zasady3 = "**» ZAKAZ** STREAMSNAJPIENIA!"
     const zasady4 = "**» ZAKAZ** TEAMOWANIA SIĘ!"
     const gra5 = "**KLUCZ DO GRY 2 POJAWI SIĘ O GODZINIE 17:30**"
-    const check = '609356000943931402'
+    const check = '601185797097652224'
   
     if(!message.member.roles.has(HOST.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **.solo hasło **_ ❌").then(() =>
