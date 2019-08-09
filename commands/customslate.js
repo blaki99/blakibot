@@ -25,6 +25,7 @@ module.exports.run = async (blaki, message, args) => {
     .setThumbnail('https://i.imgur.com/rmxBcdK.png')
     .setTitle(`**${mode} CUSTOM**`)
     .setURL('https://discord.gg/u9W8euF')
+    .addBlankField()
     .addField("**HASŁO:**", `**${pass}**`, true)
     .addField("**HOST:**", `${message.author}`, true)
     .addField("**ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4)
