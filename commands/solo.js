@@ -25,9 +25,9 @@ module.exports.run = async (blaki, message, args) => {
     message.delete();
     let customEmbed = new Discord.RichEmbed()
     .setColor("#ffa500")
+    .setThumbnail('https://i.imgur.com/rmxBcdK.png')
     .setTitle(`**ARENA SOLO CUSTOM - GAME #${game}**`)
     .setURL('https://discord.gg/u9W8euF')
-    .setThumbnail('https://i.imgur.com/rmxBcdK.png')
     .addField("**HASŁO:**", `**${pass}**`, true)
     .addField("**HOST:**", `${message.author}`, true)
     .addField("**ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4 + `\n`+ zasady5 + `\n`+ zasady6 + `\n`+ `\n`+ zasady7)
