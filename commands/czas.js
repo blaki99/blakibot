@@ -4,8 +4,7 @@ var schedule = require('node-schedule');
 module.exports.run = async (blaki, message, args) => {
 
     var rule = new schedule.RecurrenceRule();
-    rule.hour= 12;
-    rule.minute= 30;
+    rule.hour= 13;
     const x_channel = blaki.channels.get("535153796129619969");
     var j = schedule.scheduleJob(rule, function(){
       let serverembed = new Discord.RichEmbed()
@@ -20,5 +19,5 @@ module.exports.run = async (blaki, message, args) => {
 }
 
 module.exports.help = {
-    name:"start"
+    name:"czas"
 }
