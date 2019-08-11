@@ -5,7 +5,7 @@ module.exports.run = async (blaki, message, args) => {
 
     var rule = new schedule.RecurrenceRule();
     rule.hour= 12;
-    rule.minute= 10;
+    rule.minute= 30;
     const x_channel = blaki.channels.get("535153796129619969");
     var j = schedule.scheduleJob(rule, function(){
       let serverembed = new Discord.RichEmbed()
