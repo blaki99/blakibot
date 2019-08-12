@@ -8,7 +8,7 @@ module.exports.run = async (blaki, message, args) => {
     let msg2 = args.slice(1).join(' ')
     const ramka = "```md"
     const ramka2 = "```"
-    const check = '609497709593755668'
+    const check = '610477042302976000'
 
     if(!message.member.roles.has(host.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **!msgb <wiadomość>**_ ❌")
@@ -19,7 +19,10 @@ module.exports.run = async (blaki, message, args) => {
 # ${msg} ${msg2}${ramka2}`)
     .addField("__**OD:**__", `${message.author}`)
     .setTimestamp(message.createdAt)
-    message.channel.send(msgEmbed)
+    .setFooter("Kliknij reakcje jeśli przeczytałeś", "https://i.imgur.com/K7dGb0B.png");
+    message.channel.send(msgEmbed).then(function (message) {
+        message.react(check)
+    })
 }
 
 module.exports.help = {
