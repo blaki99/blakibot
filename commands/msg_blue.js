@@ -20,7 +20,6 @@ module.exports.run = async (blaki, message, args) => {
     .addField("__**OD:**__", `${message.author}`)
     .setTimestamp(message.createdAt)
     message.channel.send(msgEmbed)
-    })
 }
 
 module.exports.help = {
