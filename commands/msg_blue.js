@@ -11,7 +11,7 @@ module.exports.run = async (blaki, message, args) => {
     const check = '609497709593755668'
 
     if(!message.member.roles.has(host.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
-    if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **!msg <wiadomość>**_ ❌")
+    if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **!msgb <wiadomość>**_ ❌")
     message.delete();
     let msgEmbed = new Discord.RichEmbed()
     .setColor("#4169e1")
