@@ -68,6 +68,7 @@ module.exports.run = async (blaki, message, args) => {
   let incidentschannel = message.guild.channels.find(`name`, "📕  »  ᴅᴢɪᴇɴɴɪᴋ  ᴢᴅᴀʀᴢᴇɴ");
   if(!incidentschannel) return message.reply("❌ **Proszę utworzyć kanał zdarzeń** ❌");
   incidentschannel.send(muteembed);
+  message.channel.send(`Użytkownik ${mute} został wyciszony na ${mutetime}`)
 
   await(mute.addRole(muterole.id));
   await(mute.removeRole(gRole.id));
