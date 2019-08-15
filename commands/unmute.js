@@ -12,7 +12,7 @@ module.exports.run = async (blaki, message, args) => {
   await(rMember.removeRole(role.id));
   await(rMember.addRole(gRole.id));
 
-  
+  message.delete().catch(O_o=>{});
   try{
         let DMUnMuteEmbed = new Discord.RichEmbed()
         .setColor("#ffa500")
