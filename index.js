@@ -94,10 +94,10 @@ blaki.on("message", async message => {
     let commandfile = blaki.commands.get(cmd.slice(prefix.length));
     if(commandfile) commandfile.run(blaki,message,args);
 
-    if(message.content === "siema" || message.content === "Siema" || message.content === "hejka" || message.content === "Hejka" || message.content === "elo" || message.content === "Elo"){
+    if(message.content == "siema" || message.content == "Siema" || message.content == "hejka" || message.content == "Hejka" || message.content == "elo" || message.content == "Elo"){
         message.channel.send("Hejkaa " + message.author);
     }
-    if(message.content === "dobranoc" || message.content === "Dobranoc"){
+    if(message.content == "dobranoc" || message.content == "Dobranoc"){
         message.channel.send("Dobranooc i Kolorowych Snów ! 💖")
     }
 });
