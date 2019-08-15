@@ -96,7 +96,7 @@ blaki.on("message", async message => {
 
     let content = message.content.toLowerCase().split(" ")[0];
 
-    if(content === "siema" || content === "Siema" || content === "hejka" || content === "Hejka" || content === "elo" || content === "Elo"){
+    if(content === "siema" || content === "Siema" || content === "hejka" || content === "Hejka" || content === "elo" || content === "Elo" || content === "hi" || content === "Hi" || content === "yo" || content === "Yo" || content === "witam"){
         message.channel.send("Hejkaa " + message.author);
     }
     if(content === "dobranoc" || content === "Dobranoc"){
