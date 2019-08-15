@@ -95,7 +95,7 @@ blaki.on("message", async message => {
     if(commandfile) commandfile.run(blaki,message,args);
 
     let content = message.content.toLowerCase().split(" ")[0];
-    const kanal = blaki.channels.get("535153796129619969");
+    let kanal = blaki.channels.find('id', "535153796129619969");
     if(kanal) {
         if(content === "siema" || content === "hejka" ||content === "elo" || content === "hi" || content === "yo" || content === "witam" || content === "hej"){
             message.channel.send("Hejkaa " + message.author);
