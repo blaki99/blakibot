@@ -95,7 +95,7 @@ blaki.on("message", async message => {
     if(commandfile) commandfile.run(blaki,message,args);
 
     if(message.content === "siema" || message.content === "Siema"){
-        message.channel.send("Hejkaa " + message.author + "🍁");
+        message.channel.send("Hejkaa " + message.author);
     }
   
 });
