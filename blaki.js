@@ -95,21 +95,19 @@ blaki.on("message", async message => {
     if(commandfile) commandfile.run(blaki,message,args);
 
     let content = message.content.toLowerCase().split(" ")[0];
-    let kanal = blaki.channels.find('id', "535153796129619969");
-    if(kanal) {
-        if(content === "siema" || content === "hejka" ||content === "elo" || content === "hi" || content === "yo" || content === "witam" || content === "hej"){
-            message.channel.send("Hejkaa " + message.author);
-        }
-        if(content === "dobranoc"){
-            message.channel.send("Dobranooc i Kolorowych Snów ! 💖")
-        }
+    let kanal = blaki.channels.get("535153796129619969");
+    if(content === "siema" || content === "hejka" ||content === "elo" || content === "hi" || content === "yo" || content === "witam" || content === "hej"){
+        kanalchannel.send("Hejkaa " + message.author);
+    }
+    if(content === "dobranoc"){
+        kanalchannel.send("Dobranooc i Kolorowych Snów ! 💖")
     }
 });
 
 blaki.on('guildMemberAdd', async member =>
 {
   let WelcomeChannel = blaki.channels.get("535152553248423946");
-  WelcomeChannel.send(`Hejka ${member} i baw się dobrze 🎉!`);
+  WelcomeChannel.send(`Hejkaa ${member} i baw się dobrze 🎉!`);
 });
 
 blaki.login(config.token);
