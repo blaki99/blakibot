@@ -94,7 +94,7 @@ blaki.on("message", async message => {
     let commandfile = blaki.commands.get(cmd.slice(prefix.length));
     if(commandfile) commandfile.run(blaki,message,args);
 
-    if(message.content === "siema" || message.content === "Siema"){
+    if(message.content === "siema" || message.content === "Siema" || message.content === "hejka" || message.content === "Hejka" || message.content === "elo" || message.content === "Elo"){
         message.channel.send("Hejkaa " + message.author);
     }
   
