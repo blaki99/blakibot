@@ -6,7 +6,7 @@ module.exports.run = async (blaki, message, args) => {
 
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("❌ **Nie można wykonać akcji** ❌");
   if(args[0] == "help"){
-    message.reply("Użycie: !mute <user> <1s/m/h/d>");
+    message.reply("Użycie: !mute <user> <1s/m/h/d> <reason>");
     return;
   }
   let mute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
