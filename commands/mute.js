@@ -18,6 +18,7 @@ module.exports.run = async (blaki, message, args) => {
 
   let muterole = message.guild.roles.find(`name`, "🔇 » MUTED");
   //start of create role
+  message.delete().catch(O_o=>{});
   if(!muterole){
     try{
       muterole = await message.guild.createRole({
