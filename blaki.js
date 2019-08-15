@@ -96,10 +96,10 @@ blaki.on("message", async message => {
 
     let content = message.content.toLowerCase().split(" ")[0];
 
-    if(content === "siema" || content === "Siema" || content === "hejka" || content === "Hejka" || content === "elo" || content === "Elo" || content === "hi" || content === "Hi" || content === "yo" || content === "Yo" || content === "witam"){
+    if(content === "siema" || content === "hejka" ||content === "elo" || content === "hi" || content === "yo" || content === "witam"){
         message.channel.send("Hejkaa " + message.author);
     }
-    if(content === "dobranoc" || content === "Dobranoc"){
+    if(content === "dobranoc"){
         message.channel.send("Dobranooc i Kolorowych Snów ! 💖")
     }
 });
