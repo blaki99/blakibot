@@ -95,12 +95,14 @@ blaki.on("message", async message => {
     if(commandfile) commandfile.run(blaki,message,args);
 
     let content = message.content.toLowerCase().split(" ")[0];
-
-    if(content === "siema" || content === "hejka" ||content === "elo" || content === "hi" || content === "yo" || content === "witam"){
-        message.channel.send("Hejkaa " + message.author);
-    }
-    if(content === "dobranoc"){
-        message.channel.send("Dobranooc i Kolorowych Snów ! 💖")
+    const kanal = blaki.channels.get("535153796129619969");
+    if(kanal) {
+        if(content === "siema" || content === "hejka" ||content === "elo" || content === "hi" || content === "yo" || content === "witam"){
+            message.channel.send("Hejkaa " + message.author);
+        }
+        if(content === "dobranoc"){
+            message.channel.send("Dobranooc i Kolorowych Snów ! 💖")
+        }
     }
 });
 
