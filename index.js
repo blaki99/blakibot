@@ -97,7 +97,9 @@ blaki.on("message", async message => {
     if(message.content === "siema" || message.content === "Siema" || message.content === "hejka" || message.content === "Hejka" || message.content === "elo" || message.content === "Elo"){
         message.channel.send("Hejkaa " + message.author);
     }
-  
+    if(message.content === "dobranoc" || message.content === "Dobranoc"){
+        message.channel.send("Dobranooc i Kolorowych Snów ! 💖")
+    }
 });
 
 blaki.on('guildMemberAdd', async member =>
