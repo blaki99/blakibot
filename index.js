@@ -94,7 +94,7 @@ blaki.on("message", async message => {
     let commandfile = blaki.commands.get(cmd.slice(prefix.length));
     if(commandfile) commandfile.run(blaki,message,args);
 
-    if(message.content === "siema"){
+    if(message.content === "siema" || message.content === "Siema"){
         message.channel.send("No Siema Byku 💪");
     }
   
