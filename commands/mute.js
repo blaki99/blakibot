@@ -44,7 +44,7 @@ module.exports.run = async (blaki, message, args) => {
         let DMMuteEmbed = new Discord.RichEmbed()
         .setColor("#ffa500")
         .setTitle("__**ZOSTAŁEŚ WYCISZONY**__")
-        .addField("Serwer", `**BlaKi's Discord**`)
+        .addField("Serwer", `**${message.guild.name}**`)
         .addField("Zmutowany Przez", `<@${message.author.id}>`)
         .addField("Powód", reason)
         .addField("Czas Wyciszenia", mutetime)
