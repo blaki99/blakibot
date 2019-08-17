@@ -17,7 +17,7 @@ module.exports.run = async (blaki, message, args) => {
         let DMUnMuteEmbed = new Discord.RichEmbed()
         .setColor("#ffa500")
         .setTitle("__**ZDJĘTO WYCISZENIE**__")
-        .addField("Serwer", `**BlaKi's Discord**`)
+        .addField("Serwer", `**${message.guild.name}**`)
         .addField("Wyciszenie zdjął", `<@${message.author.id}>`)
         .setTimestamp(message.createdAt)
         .setFooter('Zdjęto wyciszenie!', 'https://i.imgur.com/3Q7TQyy.png');
