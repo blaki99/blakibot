@@ -7,13 +7,13 @@ module.exports.run = async (blaki, message, args) => {
     let pass = (args[0]);
     let game = args.slice(1).join(' ')
     let everyone = message.guild.defaultRole;
-    const zasady0 = "**» NIE** UŻYWAJ ROBOTÓW PODCZAS GRY !"
-    const zasady1 = "**» NIE** UDOSTĘPNIAJ NIKOMU HASŁA DO GRY !"
-    const zasady2 = "**» NIE** STREAMSNIPUJ INNYCH GRACZY !"
-    const zasady3 = "**» NIE** UŻYWAJ TRYBU ANONIMOWEGO PODCZAS GRY !"
-    const zasady4 = "**» NIE** BIJEMY SIĘ NA PIERWSZYCH MIEJSCÓWKACH !"
-    const zasady5 = "**» NIE** WALCZ DOPÓKI NIE ZAMKNIE SIĘ 2 STREFA!"
-    const zasady6 = "**» NIE** WALCZ PRZED 3 STREFĄ JEŚLI WŁĄCZY SIĘ STORM SURGE!"
+    const zasady0 = "> **» NIE** UŻYWAJ ROBOTÓW PODCZAS GRY !"
+    const zasady1 = "> **» NIE** UDOSTĘPNIAJ NIKOMU HASŁA DO GRY !"
+    const zasady2 = "> **» NIE** STREAMSNIPUJ INNYCH GRACZY !"
+    const zasady3 = "> **» NIE** UŻYWAJ TRYBU ANONIMOWEGO PODCZAS GRY !"
+    const zasady4 = "> **» NIE** BIJEMY SIĘ NA PIERWSZYCH MIEJSCÓWKACH !"
+    const zasady5 = "> **» NIE** WALCZ DOPÓKI NIE ZAMKNIE SIĘ 2 STREFA!"
+    const zasady6 = "> **» NIE** WALCZ PRZED 3 STREFĄ JEŚLI WŁĄCZY SIĘ STORM SURGE!"
     const zasady7 = "**NIESTOSOWANIE SIĘ DO POWYŻSZYCH ZASAD BĘDZIE KARANE BANEM !**"
     const react = '609497709593755668'
   
