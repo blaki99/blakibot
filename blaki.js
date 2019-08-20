@@ -121,9 +121,9 @@ blaki.on('guildMemberAdd', async (member) => {
     let WitamyKanal = blaki.channels.get("535152553248423946");
     let Witamy = new Discord.RichEmbed()
     .setColor("#FFA500")
-    .addField(`Hejka ${member} i baw się dobrze na ${member.guild.name} 🎉💛!`)
+    .addField(`Hejka <@${member}> i baw się dobrze na ${member.guild.name} 🎉💛!`)
     .addField(`Na kanale #📂  »  ᴏᴅʙɪᴇʀᴢ  ʀᴏʟᴇ możesz odebrać sobie pare rang klikając w reakcję!`)
-    .setFooter("Zapoznaj się z Regulaminem", "https://i.imgur.com/3Q7TQyy.png");
+    .setFooter("Zapoznaj się również z Regulaminem Serwera!", "https://i.imgur.com/3Q7TQyy.png");
     WitamyKanal.send(Witamy);
 });
 
