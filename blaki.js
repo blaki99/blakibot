@@ -117,10 +117,17 @@ blaki.on("message", async message => {
     }
 });
 
-blaki.on('guildMemberAdd', async (member, msg) =>
-{
-  let WelcomeChannel = blaki.channels.get("535152553248423946");
-  WelcomeChannel.send(`Hejkaa ${member} i baw się dobrze na ${msg.guild.name} 🎉💛!`);
-});
+//blaki.on('guildMemberAdd', async member => {
+//blaki.on('message',
+//  let WelcomeChannel = blaki.channels.get("535152553248423946");
+//  WelcomeChannel.send(`Hejkaa ${member} i baw się dobrze na ${message.guild.name} 🎉💛!`);
+//}));
+
+blaki.on('guildMemberAdd', member => {
+blaki.on('message', 
+
+member.guild.channels.get('535152553248423946').send(`Hejkaa ${member} i baw się dobrze na ${message.guild.name} 🎉💛!`);
+
+}); );
 
 blaki.login(config.token);
