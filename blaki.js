@@ -98,8 +98,17 @@ blaki.on("message", async message => {
     
     if(message.author.blaki) return;
     if(message.channel.type === "dm") return;
-  
-    let prefix = blakiconfig.prefix;
+     
+    let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+    if(!prefixes[message.guild.id]){
+    prefixes[message.guild.id] = {
+      prefixes: blakiconfig.prefix
+      };
+    }
+
+    let prefix = prefixes[message.guild.id].prefixes;
+    if(!message.content.startsWith(prefix)) return;
+    //let prefix = blakiconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
