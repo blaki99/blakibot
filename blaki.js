@@ -122,7 +122,7 @@ blaki.on('guildMemberAdd', async (member) => {
     let Witamy = new Discord.RichEmbed()
     .setColor("#FFA500")
     .setTitle("WITAMY NA SERWERZE **${member.guild.name} 🎉💛**")
-    .addField(`BAW SIĘ DOBRZE <@${member}>`)
+    .addField(`BAW SIĘ DOBRZE ${member}`)
     .addField(`Na kanale __**#📂 » ᴏᴅʙɪᴇʀᴢ ʀᴏʟᴇ**__ możesz odebrać sobie pare rang klikając w reakcję!`)
     .setFooter("Zapoznaj się również z Regulaminem Serwera!", "https://i.imgur.com/3Q7TQyy.png");
     WitamyKanal.send(Witamy);
