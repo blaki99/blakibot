@@ -125,7 +125,7 @@ blaki.on('guildMemberAdd', async (member) => {
     .setColor("#FFA500")
     .setTitle(`**WITAMY NA SERWERZE** ${ramka}${member.guild.name}${ramka}`)
     .addField("**BAW SIĘ DOBRZE**", `> **${member}** 💛`)
-    .addField("**KANAŁ Z RANGAMI**", `> Na kanale ${ramka}#📂 » ᴏᴅʙɪᴇʀᴢ ʀᴏʟᴇ${ramka} klikając w reakcję odbierasz rangi!`)
+    .addField("**KANAŁ Z RANGAMI**", `> Na kanale ${ramka}📂 » ᴏᴅʙɪᴇʀᴢ ʀᴏʟᴇ${ramka} odbierasz rangi klikając w reakcję!`)
     .setFooter("Zapoznaj się również z Regulaminem Serwera!", "https://i.imgur.com/3Q7TQyy.png");
     WitamyKanal.send(Witamy);
 });
