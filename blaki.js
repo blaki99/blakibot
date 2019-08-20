@@ -117,9 +117,9 @@ blaki.on("message", async message => {
     }
 });
 
-blaki.on('guildMemberAdd', async (member, msg) => {
+blaki.on('guildMemberAdd', async (member) => {
     let WelcomeChannel = blaki.channels.get("535152553248423946");
-    WelcomeChannel.send(`Hejkaa ${member} i baw się dobrze na ${msg.guild.name} 🎉💛!`);
+    WelcomeChannel.send(`Hejkaa ${member} i baw się dobrze na ${member.guild.name} 🎉💛!`);
 });
 
 
