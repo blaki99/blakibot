@@ -118,9 +118,13 @@ blaki.on("message", async message => {
 });
 
 blaki.on('guildMemberAdd', async (member) => {
-    let WelcomeChannel = blaki.channels.get("535152553248423946");
-    WelcomeChannel.send(`Hejkaa ${member} i baw się dobrze na ${member.guild.name} 🎉💛!`);
+    let WitamyKanal = blaki.channels.get("535152553248423946");
+    let Witamy = new Discord.RichEmbed()
+    .setColor("#FFA500")
+    .addField(`Hejka ${member} i baw się dobrze na ${member.guild.name} 🎉💛!`)
+    .addField(`Na kanale #📂  »  ᴏᴅʙɪᴇʀᴢ  ʀᴏʟᴇ możesz odebrać sobie pare rang klikając w reakcję!`)
+    .setFooter("Zapoznaj się z Regulaminem", "https://i.imgur.com/3Q7TQyy.png");
+    WitamyKanal.send(Witamy);
 });
-
 
 blaki.login(config.token);
