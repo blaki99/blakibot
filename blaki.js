@@ -118,12 +118,14 @@ blaki.on("message", async message => {
 });
 
 blaki.on('guildMemberAdd', async (member) => {
+    const ramka = "``"
+    
     let WitamyKanal = blaki.channels.get("535152553248423946");
     let Witamy = new Discord.RichEmbed()
     .setColor("#FFA500")
-    .setTitle(`WITAMY NA SERWERZE **${member.guild.name} 🎉💛**`)
-    .addField(`BAW SIĘ DOBRZE ${member}`)
-    .addField(`Na kanale __**#📂 » ᴏᴅʙɪᴇʀᴢ ʀᴏʟᴇ**__ możesz odebrać sobie pare rang klikając w reakcję!`)
+    .setTitle(`WITAMY NA SERWERZE ${ramka}**${member.guild.name} 🎉💛**${ramka}`)
+    .addField("BAW SIĘ DOBRZE", `> <@${member}>`)
+    .addField("KANAŁ Z RANGAMI", `> ${ramka}__**#📂 » ᴏᴅʙɪᴇʀᴢ ʀᴏʟᴇ**__${ramka}`)
     .setFooter("Zapoznaj się również z Regulaminem Serwera!", "https://i.imgur.com/3Q7TQyy.png");
     WitamyKanal.send(Witamy);
 });
