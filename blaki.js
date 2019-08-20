@@ -14,10 +14,23 @@ const config = {
 
 let date = require('date-and-time');
 
+const aktywnosc = [
+    "KOD BLAKI W SKLEPIE 🖤", 
+    "KOD BLAKI W SKLEPIE 🍁", 
+    "KOD BLAKI W SKLEPIE 💚",
+    "KOD BLAKI W SKLEPIE 💛",
+    "KOD BLAKI W SKLEPIE 💜",
+    "KOD BLAKI W SKLEPIE 🧡"
+];
+
+
 blaki.on('ready', async () => 
 {
   console.log(`${blaki.user.username} jest online!`);
-  blaki.user.setActivity('KOD BLAKI W SKLEPIE', { type: 'WATCHING'});
+  setInterval(function() {
+        var actID = Math.floor(Math.random() * Math.floor(aktywnosc.length));
+        blaki.user.setActivity(aktywnosc[actID]);
+    }, 10000);
   
     setInterval(async () => {
       Fortnite.FortniteStore('en', async (data) => {
