@@ -98,7 +98,16 @@ blaki.on("message", async message => {
     
     if(message.author.blaki) return;
     if(message.channel.type === "dm") return;
-     
+
+    let content = message.content.toLowerCase().split(" ")[0];
+    let kanal = blaki.channels.get("535153796129619969");
+    if(content === "siema" || content === "hejka" || content === "elo" || content === "hi" || content === "yo" || content === "witam" || content === "hej"){
+        kanal.send("Hejkaa " + message.author);
+    }
+    if(content === "dobranoc"){
+        kanal.send("Dobranooc i Kolorowych Snów ! 💖")
+    }
+
     let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
     if(!prefixes[message.guild.id]){
     prefixes[message.guild.id] = {
@@ -108,22 +117,13 @@ blaki.on("message", async message => {
 
     let prefix = prefixes[message.guild.id].prefixes;
     if(!message.content.startsWith(prefix)) return;
-    //let prefix = blakiconfig.prefix;
+
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
   
     let commandfile = blaki.commands.get(cmd.slice(prefix.length));
     if(commandfile) commandfile.run(blaki,message,args);
-
-    let content = message.content.toLowerCase().split(" ")[0];
-    let kanal = blaki.channels.get("535153796129619969");
-    if(content === "siema" || content === "hejka" ||content === "elo" || content === "hi" || content === "yo" || content === "witam" || content === "hej"){
-        kanal.send("Hejkaa " + message.author);
-    }
-    if(content === "dobranoc"){
-        kanal.send("Dobranooc i Kolorowych Snów ! 💖")
-    }
 });
 
 blaki.on('guildMemberAdd', async (member) => {
