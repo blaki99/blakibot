@@ -3,10 +3,12 @@ const Discord = require("discord.js");
 module.exports.run = async (blaki, message, args) => {
 
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("❌ **Nie można wykonać akcji** ❌");
+   
     if(args[0] == "help"){
       message.reply("Użycie: !unban <user> <reason>");
       return;
     }
+    
     let bUser = await blaki.fetchUser(args[0]);
     if(!bUser) return message.channel.send("❌ **Nie znaleziono użytkownika** ❌");
     let bReason = args.join(" ").slice(22);
@@ -25,8 +27,9 @@ module.exports.run = async (blaki, message, args) => {
 
     let incidentchannel = message.guild.channels.find(`name`, "📕  »  ᴅᴢɪᴇɴɴɪᴋ  ᴢᴅᴀʀᴢᴇɴ");
     if(!incidentchannel) return message.channel.send("❌ **Proszę utworzyć kanał zdarzeń** ❌");
+    
     try {
-      message.guild.unban(bUser, {bReason: bReason});
+      message.guild.unban(bUser);
       incidentchannel.send(unbanEmbed);
     }
 }
