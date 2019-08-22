@@ -10,7 +10,6 @@ module.exports.run = async (blaki, message, args) => {
     let bUser = await blaki.fetchUser(args[0]);
     if(!bUser) return message.channel.send("❌ **Nie znaleziono użytkownika** ❌");
     let bReason = args.join(" ").slice(22);
-    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ **Nie można zbanować tego użytkownika** ❌");
     
     message.delete().catch(O_o=>{});
     
