@@ -7,7 +7,7 @@ module.exports.run = async (blaki, message, args) => {
       message.reply("Użycie: !unban <user> <reason>");
       return;
     }
-    let bUser = await blaki.fetchUser(args[0])
+    let bUser = await blaki.fetchUser(args[0]);
     if(!bUser) return message.channel.send("❌ **Nie znaleziono użytkownika** ❌");
     let bReason = args.join(" ").slice(22);
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ **Nie można zbanować tego użytkownika** ❌");
@@ -40,7 +40,7 @@ module.exports.run = async (blaki, message, args) => {
     let incidentchannel = message.guild.channels.find(`name`, "📕  »  ᴅᴢɪᴇɴɴɪᴋ  ᴢᴅᴀʀᴢᴇɴ");
     if(!incidentchannel) return message.channel.send("❌ **Proszę utworzyć kanał zdarzeń** ❌");
 
-    message.guild.member(bUser).unban(bReason);
+    message.guild.unban(bUser, bReason);
     incidentchannel.send(unbanEmbed);
 }
 
