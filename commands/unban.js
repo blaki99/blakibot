@@ -40,7 +40,7 @@ module.exports.run = async (blaki, message, args) => {
     let incidentchannel = message.guild.channels.find(`name`, "📕  »  ᴅᴢɪᴇɴɴɪᴋ  ᴢᴅᴀʀᴢᴇɴ");
     if(!incidentchannel) return message.channel.send("❌ **Proszę utworzyć kanał zdarzeń** ❌");
 
-    message.guild.unban(bUser, bReason);
+    message.guild.unban(bUser, {bReason: bReason});
     incidentchannel.send(unbanEmbed);
 }
 
