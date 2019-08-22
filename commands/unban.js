@@ -47,4 +47,3 @@ module.exports.run = async (blaki, message, args) => {
 module.exports.help = {
   name:"unban"
 }
-3
