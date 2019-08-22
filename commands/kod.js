@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("../blakiconfig.json");
 
 module.exports.run = async (blaki, message, args) => {
     
@@ -8,7 +9,7 @@ module.exports.run = async (blaki, message, args) => {
     .setColor("#ffa500")
     .setImage('https://i.imgur.com/jj2M5mv.png')
     .setTimestamp(message.createdAt)
-    .setFooter('Wspieraj Najlepszego Twórcę!', 'https://i.imgur.com/3Q7TQyy.png');
+    .setFooter('Wspieraj Najlepszego Twórcę!', `${config.avatar}`);
 
     message.channel.send(serverembed);
 }
