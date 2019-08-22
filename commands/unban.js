@@ -29,7 +29,7 @@ module.exports.run = async (blaki, message, args) => {
     if(!incidentchannel) return message.channel.send("❌ **Proszę utworzyć kanał zdarzeń** ❌");
     
     try {
-      message.guild.unban(bUser);
+      message.guild.unban(bUser, {bReason: bReason});
       incidentchannel.send(unbanEmbed);
     }catch(e){
         message.channel.send("Nie można wykonać akcji")
