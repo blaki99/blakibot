@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("../blakiconfig.json");
 
 module.exports.run = async (blaki, message, args) => {
 
@@ -29,7 +30,7 @@ module.exports.run = async (blaki, message, args) => {
     .addField("**HOST:**", `${message.author}`, true)
     .addField("**ZASADY:**", zasady0 + `\n` +zasady1 + `\n`+ zasady2 + `\n`+ zasady3 + `\n`+ zasady4)
     .setTimestamp(message.createdAt)
-    .setFooter("Kliknij reakcje jeśli grasz", "https://i.imgur.com/3Q7TQyy.png");
+    .setFooter("Kliknij reakcje jeśli grasz", `${config.avatar}`);
     message.channel.send(everyone.toString());
     message.channel.send(customEmbed).then(function (message) {
         message.react(check)
