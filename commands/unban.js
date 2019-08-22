@@ -12,19 +12,6 @@ module.exports.run = async (blaki, message, args) => {
     if(!bUser) return message.channel.send("❌ **Nie znaleziono użytkownika** ❌");
     let bReason = args.join(" ").slice(22);
     
-    try{
-        let DMunbanEmbed = new Discord.RichEmbed()
-        .setColor("#ffa500")
-        .setTitle("__**ZOSTAŁEŚ ODBANOWANY**__")
-        .addField("Serwer", `**${message.guild.name}**`)
-        .addField("Odbanowany Przez", `<@${message.author.id}>`)
-        .addField("Powód", bReason)
-        .setTimestamp(message.createdAt)
-        .setFooter('Zostałeś Odbanowany!', 'https://i.imgur.com/3Q7TQyy.png');
-        await bUser.send(DMunbanEmbed)
-    }catch(e){
-        message.channel.send(`Użytkownik został zbanowany na **BlaKi's Discord** ale niestemy ma zablokowane wiadomości prywatne.`)
-    }
 
     let unbanEmbed = new Discord.RichEmbed()
     .setColor("#ffa500")
@@ -39,11 +26,20 @@ module.exports.run = async (blaki, message, args) => {
     if(!incidentchannel) return message.channel.send("❌ **Proszę utworzyć kanał zdarzeń** ❌");
     incidentchannel.send(unbanEmbed);
     
-    try {
-        message.guild.unban(bUser);
+    try{
+        let DMunbanEmbed = new Discord.RichEmbed()
+        .setColor("#ffa500")
+        .setTitle("__**ZOSTAŁEŚ ODBANOWANY**__")
+        .addField("Serwer", `**${message.guild.name}**`)
+        .addField("Odbanowany Przez", `<@${message.author.id}>`)
+        .addField("Powód", bReason)
+        .setTimestamp(message.createdAt)
+        .setFooter('Zostałeś Odbanowany!', 'https://i.imgur.com/3Q7TQyy.png');
+        message.guild.unban(bUser)
+        bUser.send(DMunbanEmbed)
     }catch(e){
-        message.channel.send("error");
-        }
+        message.channel.send(`Użytkownik został zbanowany na **BlaKi's Discord** ale niestemy ma zablokowane wiadomości prywatne.`)
+    }
 }
 
 module.exports.help = {
