@@ -7,7 +7,7 @@ module.exports.run = async (blaki, message, args) => {
       message.reply("Użycie: !unban <user> <reason>");
       return;
     }
-    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    let bUser = await blaki.fetchUse(args[0])
     if(!bUser) return message.channel.send("❌ **Nie znaleziono użytkownika** ❌");
     let bReason = args.join(" ").slice(22);
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ **Nie można zbanować tego użytkownika** ❌");
