@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("../blakiconfig.json");
 
 module.exports.run = async (blaki, message, args) => {
 
@@ -20,7 +21,7 @@ module.exports.run = async (blaki, message, args) => {
         .addField("Wyrzucony Przez", `<@${message.author.id}>`)
         .addField("Powód", kReason)
         .setTimestamp(message.createdAt)
-        .setFooter('Zostałeś wyrzucony!', 'https://i.imgur.com/3Q7TQyy.png');
+        .setFooter('Zostałeś wyrzucony!', `${config.avatar}`);
         await kUser.send(DMkickEmbed)
     }catch(e){
         message.channel.send(`Użytkownik został zbanowany na **BlaKi's Discord** ale niestemy ma zablokowane wiadomości prywatne.`)
@@ -33,7 +34,7 @@ module.exports.run = async (blaki, message, args) => {
     .addField("Wyrzucony na", message.channel)
     .addField("Powód", kReason)
     .setTimestamp(message.createdAt)
-    .setFooter('Wyrzucono Użytkownika', 'https://i.imgur.com/3Q7TQyy.png');
+    .setFooter('Wyrzucono Użytkownika', `${config.avatar}`);
 
     let kickChannel = message.guild.channels.find(`name`, "📕  »  ᴅᴢɪᴇɴɴɪᴋ  ᴢᴅᴀʀᴢᴇɴ");
     if(!kickChannel) return message.channel.send("❌ **Proszę utworzyć kanał zdarzeń** ❌");
