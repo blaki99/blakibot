@@ -8,7 +8,7 @@ module.exports.run = async (blaki, message, args) => {
       message.reply("Użycie: !unban <user> <reason>");
       return;
     }
-    let bUser = args[0]
+    let bUser = args[0];
     if(!bUser) return message.channel.send("❌ **Nie znaleziono użytkownika** ❌");
     let bReason = args.join(" ").slice(22);
     
