@@ -13,7 +13,8 @@ module.exports.run = async (blaki, message, args) => {
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ **Nie można zbanować tego użytkownika** ❌");
     
     message.delete().catch(O_o=>{});
-
+    try {
+        
     let unbanEmbed = new Discord.RichEmbed()
     .setColor("#ffa500")
     .addField("Odbanowany Użytkownik", `${bUser}`)
@@ -26,7 +27,6 @@ module.exports.run = async (blaki, message, args) => {
     let incidentchannel = message.guild.channels.find(`name`, "📕  »  ᴅᴢɪᴇɴɴɪᴋ  ᴢᴅᴀʀᴢᴇɴ");
     if(!incidentchannel) return message.channel.send("❌ **Proszę utworzyć kanał zdarzeń** ❌");
     
-    try {
     message.guild.unban(bUser, {bReason: bReason});
     incidentchannel.send(unbanEmbed);
     }
