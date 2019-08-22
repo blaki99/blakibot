@@ -36,7 +36,7 @@ module.exports.run = async (blaki, message, args) => {
         .setTimestamp(message.createdAt)
         .setFooter('Zostałeś Odbanowany!', 'https://i.imgur.com/3Q7TQyy.png');
         message.guild.unban(bUser)
-        bUser.send(DMunbanEmbed)
+        await bUser.send(DMunbanEmbed)
     }catch(e){
         message.channel.send(`Użytkownik został zbanowany na **BlaKi's Discord** ale niestemy ma zablokowane wiadomości prywatne.`)
     }
