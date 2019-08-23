@@ -21,7 +21,6 @@ module.exports.run = async (blaki, message, args) => {
     .setTimestamp(message.createdAt)
     .setFooter("Nowa Informacja", `${config.avatar}`);
     message.channel.send(msgEmbed);
-    })
 }
 
 module.exports.help = {
