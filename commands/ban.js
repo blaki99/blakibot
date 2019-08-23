@@ -17,7 +17,7 @@ module.exports.run = async (blaki, message, args) => {
     
     try{
         let DMbanEmbed = new Discord.RichEmbed()
-        .setColor("#ffa500")
+        .setColor("#FF0000")
         .setTitle("__**ZOSTAŁEŚ ZBANOWANY**__")
         .addField("Serwer", `**${message.guild.name}**`)
         .addField("Zbanowany Przez", `<@${message.author.id}>`)
@@ -30,7 +30,7 @@ module.exports.run = async (blaki, message, args) => {
     }
 
     let banEmbed = new Discord.RichEmbed()
-    .setColor("#ffa500")
+    .setColor("#FF0000")
     .addField("Zbanowany Użytkownik", `${bUser}`)
     .addField("Zbanowany Przez", `<@${message.author.id}>`)
     .addField("Zbanowany Na", message.channel)
