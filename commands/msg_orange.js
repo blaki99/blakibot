@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("../blakiconfig.json");
 
 module.exports.run = async (blaki, message, args) => {
 
@@ -7,8 +8,7 @@ module.exports.run = async (blaki, message, args) => {
     let msg = (args[0]);
     let msg2 = args.slice(1).join(' ')
     const ramka = "```fix"
-    const ramka2 = "```"
-    const check = '609497709593755668'
+    const ramka2 = "```"'
 
     if(!message.member.roles.has(host.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **!msgo <wiadomość>**_ ❌")
@@ -19,9 +19,8 @@ module.exports.run = async (blaki, message, args) => {
 ${msg} ${msg2}${ramka2}`)
     .addField("__**OD:**__", `${message.author}`)
     .setTimestamp(message.createdAt)
-    .setFooter("Kliknij reakcje jeśli przeczytałeś", "https://i.imgur.com/3Q7TQyy.png");
-    message.channel.send(msgEmbed).then(function (message) {
-        message.react(check)
+    .setFooter("Nowa Informacja!", `${config.avatar}`);
+    message.channel.send(msgEmbed);)
     })
 }
 
