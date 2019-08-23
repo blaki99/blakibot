@@ -1,0 +1,44 @@
+const Discord = require("discord.js");
+const keys = require("../data/keys.json");
+const Client = require("fortnite");
+const fortnite = new Client(keys.apikey);
+
+module.exports.run = async (bot, message, args) => {
+    if(!message.content.startsWith(prefix)) return ;
+await message.delete();
+let username = args[0];
+let platform = args[1] || "pc";
+
+if(!username) return message.channel.send(":question: Please specify a username.");
+
+let data = fortnite.user(username, platform).then(data => {
+let stats = data.stats;
+let lifetime = stats.lifetime;
+    let score = lifetime[6]['Score'];
+    let mPlayed = lifetime[7]['Matches Played'];
+    let wins = lifetime[8]['Wins'];
+    let wPercent = lifetime[9]['Win%'];
+    let kills = lifetime[10]['Kills'];
+    let kd = lifetime[11]['K/d'];
+  let backtick = "`";
+  let lifeStatsEmbed = new Discord.RichEmbed()
+  .setAuthor(`Requested by ${message.author.username}!`)
+  .setTitle("Source")
+  .setDescription(`:pager: **Lifetime Fortnite Stats of User** ${backtick}${data.username}${backtick}!`)
+  .addField("Score", score)
+  .addField("Matches Played", mPlayed)
+  .addField("Wins", wins)
+  .addField("Win Percentage", wPercent)
+  .addField("Kills", kills)
+  .addField("Kill/Death Ratio", kd)
+  .setURL("https://fortnitetracker.com")
+  .setColor("#cd00cd");
+  
+  message.channel.send(lifeStatsEmbed);
+
+});
+
+}
+module.exports.help = {
+  name:"fnStats"
+}
