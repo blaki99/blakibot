@@ -19,12 +19,11 @@ module.exports.run = async (blaki, message, args) => {
         let wPercent = lifetime[9]['Win%'];
         let kills = lifetime[10]['Kills'];
         let kd = lifetime[11]['K/d'];
-      let backtick = "`";
       let lifeStatsEmbed = new Discord.RichEmbed()
       .setColor("#cd00cd")
       .setTitle(`**STATYSTYKI ${message.author.username}!**`)
       .setURL("https://fortnitetracker.com")
-      .setDescription(`:pager: **Lifetime Fortnite Stats of User** ${backtick}${data.username}${backtick}!`)
+      .setDescription(`:pager: **Lifetime Fortnite Stats of User** ${data.username}!`)
       .addField("Score", score)
       .addField("Matches Played", mPlayed)
       .addField("Wins", wins)
