@@ -8,7 +8,7 @@ module.exports.run = async (blaki, message, args) => {
     let msg = (args[0]);
     let msg2 = args.slice(1).join(' ')
     const ramka = "```fix"
-    const ramka2 = "```"'
+    const ramka2 = "```"
 
     if(!message.member.roles.has(host.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **!msgo <wiadomość>**_ ❌")
