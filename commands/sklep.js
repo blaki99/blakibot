@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const Fortnite = require("fortnite-publicapi");
 const shop = require("../shop.json");
+const config = require("../blakiconfig.json");
 
 module.exports.run = async (blaki, message, args) => {
   message.delete().catch(O_o=>{});
@@ -22,7 +23,7 @@ module.exports.run = async (blaki, message, args) => {
                .setDescription("**KOD W SKLEPIE BLAKI**")
                .setImage(`${element}`)
                .setTimestamp(message.createdAt)
-               .setFooter('Wspieraj Najlepszego Twórcę!', 'https://i.imgur.com/mNBIfzO.png');
+               .setFooter('Wspieraj Najlepszego Twórcę!', `${config.avatar}`);
                await channel.send(bEmbed);
             });
           }
