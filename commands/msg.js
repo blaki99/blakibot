@@ -19,7 +19,7 @@ module.exports.run = async (blaki, message, args) => {
 ${msg} ${msg2}${ramka2}`)
     .addField("__**OD:**__", `${message.author}`)
     .setTimestamp(message.createdAt)
-    .setFooter("Kliknij reakcje jeśli przeczytałeś", "https://i.imgur.com/3Q7TQyy.png");
+    .setFooter("Kliknij reakcje jeśli przeczytałeś", `${config.avatar}`);
     message.channel.send(msgEmbed).then(function (message) {
         message.react(check)
     })
