@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("../blakiconfig.json");
 
 module.exports.run = async (blaki, message, args) => {
 
@@ -20,7 +21,7 @@ module.exports.run = async (blaki, message, args) => {
         .addField("Serwer", `**${message.guild.name}**`)
         .addField("Wyciszenie zdjął", `<@${message.author.id}>`)
         .setTimestamp(message.createdAt)
-        .setFooter('Zdjęto wyciszenie!', 'https://i.imgur.com/3Q7TQyy.png');
+        .setFooter('Zdjęto wyciszenie!', `${config.avatar}`);
         await rMember.send(DMUnMuteEmbed)
     }catch(e){
         message.channel.send(`<@${rMember.id}> ma zablokowane wiadomośći prywatne ale wyciszenie zostało zdjęte!`)
@@ -32,7 +33,7 @@ module.exports.run = async (blaki, message, args) => {
   .addField("Zdjęto Użytkownikowi", rMember)
   .addField("Zdjęto na", message.channel)
   .setTimestamp(message.createdAt)
-  .setFooter('Zdjęto Wyciszenie', 'https://i.imgur.com/3Q7TQyy.png');
+  .setFooter('Zdjęto Wyciszenie', `${config.avatar}`);
 
   let incidentschannel = message.guild.channels.find(`name`, "📕  »  ᴅᴢɪᴇɴɴɪᴋ  ᴢᴅᴀʀᴢᴇɴ");
   if(!incidentschannel) return message.reply("❌ **Proszę utworzyć kanał zdarzeń** ❌");
