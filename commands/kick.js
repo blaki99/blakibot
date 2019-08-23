@@ -15,7 +15,7 @@ module.exports.run = async (blaki, message, args) => {
     message.delete().catch(O_o=>{});
     try{
         let DMkickEmbed = new Discord.RichEmbed()
-        .setColor("#ffa500")
+        .setColor("#ff0000")
         .setTitle("__**ZOSTAŁEŚ WYRZUCONY**__")
         .addField("Serwer", `**${message.guild.name}**`)
         .addField("Wyrzucony Przez", `<@${message.author.id}>`)
@@ -28,7 +28,7 @@ module.exports.run = async (blaki, message, args) => {
     }
     
     let kickEmbed = new Discord.RichEmbed()
-    .setColor("#ffa500")
+    .setColor("#ff0000")
     .addField("Wyrzucony Użytkownik", `${kUser}`)
     .addField("Wyrzucony przez", `<@${message.author.id}>`)
     .addField("Wyrzucony na", message.channel)
