@@ -20,7 +20,8 @@ const aktywnosc = [
     "KOD BLAKI W SKLEPIE 💚",
     "KOD BLAKI W SKLEPIE 💛",
     "KOD BLAKI W SKLEPIE 💜",
-    "KOD BLAKI W SKLEPIE 🧡"
+    "KOD BLAKI W SKLEPIE 💗",
+    "KOD BLAKI W SKLEPIE 💝"
 ];
 
 
