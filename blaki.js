@@ -29,7 +29,7 @@ blaki.on('ready', async () =>
   console.log(`${blaki.user.username} jest online!`);
   setInterval(function() {
         var actID = Math.floor(Math.random() * Math.floor(aktywnosc.length));
-        blaki.user.setActivity(aktywnosc[actID]);
+        blaki.user.setActivity(aktywnosc[actID], {type: 'WATCHING'});
     }, 10000);
   
     setInterval(async () => {
