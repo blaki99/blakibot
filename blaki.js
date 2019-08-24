@@ -50,7 +50,7 @@ blaki.on('ready', async () =>
                .setTitle(`**SKLEP ${data['date']}**`)
                .setDescription("**KOD W SKLEPIE BLAKI**")
                .setImage(`${element}`)
-               .setFooter('Wspieraj Najlepszego Twórcę!', 'https://i.imgur.com/mNBIfzO.png');
+               .setFooter('Wspieraj Najlepszego Twórcę!', `${config.avatar}`);
                await channel.send(bEmbed);
             });
           }
