@@ -71,7 +71,7 @@ blaki.on('ready', async () =>
     DateChannel.setName("📅 " + date.format(now, 'DD.MM.YYYY'));
     OnlineChannel.setName("💚 Aktywni: " + OnlineCount);
     HumansChannel.setName("👑 Jest Nas: " + HumansCount);
-  }, 30000)
+  }, 20000)
 });
 
 fs.readdir("./commands/", (err, files) => {
