@@ -51,7 +51,7 @@ blaki.on('ready', async () =>
                .setTitle(`**SKLEP ${data['date']}**`)
                .setDescription("**KOD W SKLEPIE BLAKI**")
                .setImage(`${element}`)
-               .setFooter('Wspieraj Najlepszego Twórcę!', `${config.avatar}`);
+               .setFooter('Wspieraj Najlepszego Twórcę!', `${blakiconfig.avatar}`);
                await channel.send(bEmbed);
             });
           }
