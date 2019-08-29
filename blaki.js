@@ -126,13 +126,13 @@ blaki.on("message", async message => {
 
 blaki.on('guildMemberAdd', async (member) => {
     const ramka = "``"
-    const rangi = `> Na kanale ${ramka}📂 » ᴏᴅʙɪᴇʀᴢ ʀᴏʟᴇ${ramka} odbierasz rangi klikając w reakcję!`
+    const rangi = `> Na kanale ${ramka}📂 ➜ ᴏᴅʙɪᴇʀᴢ ʀᴏʟᴇ${ramka} odbierasz rangi klikając w reakcję!`
     let WitamyKanal = blaki.channels.get("535152553248423946");
     let Witamy = new Discord.RichEmbed()
     .setColor("#FFA500")
     .setTitle(`**WITAMY NA SERWERZE** ${ramka}${member.guild.name}${ramka}`)
     .addField("**NOWY UŻYTKOWNIK!**", `> Baw się dobrze **${member}** 💕` + `\n` + `\n` + rangi)
-    .setFooter("Zapoznaj się również z Regulaminem Serwera!", "https://i.imgur.com/3Q7TQyy.png");
+    .setFooter("Zapoznaj się również z Regulaminem Serwera!", `${blakiconfig.avatar}`);
     WitamyKanal.send(Witamy);
 });
 
