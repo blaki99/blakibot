@@ -8,7 +8,7 @@ module.exports.run = async (blaki, message, args) => {
     .setColor("#FF0000")
     .addField("__**TRIO SQUAD:**__", "• BlaKi" + `\n` + "• Matek" + `\n` + "• Kogutzz")
     .setTimestamp(message.createdAt)
-    .setImage('https://i.imgur.com/DBQt3ci.jpg')
+    .setImage('https://i.imgur.com/wPE06CM.png')
     .setFooter("Kiedyś będziemy TOP #1", `${config.avatar}`);
 
     message.channel.send(TrioEmbed);
