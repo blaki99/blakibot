@@ -13,7 +13,7 @@ module.exports.run = async (blaki, message, args) => {
     const zasady2 = "**» NIE** UŻYWAJ ROBOTÓW PODCZAS GRY!"
     const zasady3 = "**» NIE** UŻYWAJ TRYBU ANONIMOWEGO PODCZAS GRY!"
     const zasady4 = "**» NIE** BIJEMY SIĘ NA PIERWSZYCH MIEJSCÓWKACH !"
-    const check = '609497709593755668'
+    const check = '💛'
 
     if(!message.member.roles.has(HOST.id)) return message.reply("Ooops, nie posiadasz uprawnień!");
     if(!args[0]) return message.channel.send("❌ _Wprowadź prawidłowe wartości, **!late hasło tryb**_ ❌").then(() =>
